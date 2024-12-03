@@ -15,8 +15,21 @@ site_libs
 *.ss
 *.tmp
 *.sso
+*.dep
+*.cov
+*.hes
+*.exe 
+*win.log
 fmin.log
 ss3_linux.log
 working/ss3-example-calcs.r
 ss3.*
 *.ss_new
+/SS model/plots/*
+
+#exceptions 
+!/SS model/data.ss
+!/SS model/control.ss
+!/SS model/starter.ss
+!/SS model/forecast.ss
+!/bin/*
