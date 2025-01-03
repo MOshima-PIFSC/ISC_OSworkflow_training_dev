@@ -25,16 +25,12 @@ website:
         file: index.qmd
       #- text: "Seminar slides"
       #  file: assets/web-slides.qmd
-      - section: "Day 1"
-        contents: 
-        - text: "Github"
-          file: "assets/Day_1/github_basics.qmd"
-        - text: "Codespaces"
-          file: "assets/Day_1/codespaces.qmd"
-        - text: "Reproducible Environments"
-          file: "assets/Day_1/reproducible_environments.qmd"
-      - section: "Day 2"
-      - section: "Day 3"
+      - text: "Github"
+        file: "assets/Day_1/github_basics.qmd"
+      - text: "Codespaces"
+        file: "assets/Day_1/codespaces.qmd"
+      - text: "Reproducible Environments"
+        file: "assets/Day_1/reproducible_environments.qmd"
       - section: "Contact us"
         contents:
         - text: "Nicholas Ducharme-Barth"
