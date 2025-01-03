@@ -1578,7 +1578,7 @@ $~$
 $~$
 
 ::: {.fragment .fade-in fragment-index=1}
-Excluding the job that timed out the `r nrow(comptime_dt_minus)` jobs run on Hera completed [`r round(sum(comptime_dt_minus$hera_runtime)/60,digits=2)` hours]{.fragment .hl-blue fragment-index=2} of calculations (`r round(mean(comptime_dt_minus$hera_runtime),digits=2)` minutes per job) in an elapsed time of [`r round(as.numeric(abs(difftime(min(comptime_dt_minus$hera_start),max(comptime_dt_minus$hera_end),units="mins"))),digits=2)` minutes]{.fragment .hl-blue fragment-index=3} or $\sim$ `r round(1/(as.numeric(abs(difftime(min(comptime_dt_minus$hera_start),max(comptime_dt_minus$hera_end),units="mins")))/sum(comptime_dt_minus$hera_runtime)))` $\times$ faster.
+Excluding the job that timed out the "r nrow(comptime_dt_minus)" jobs run on Hera completed ["r round(sum(comptime_dt_minus$hera_runtime)/60,digits=2)" hours]{.fragment .hl-blue fragment-index=2} of calculations ("r round(mean(comptime_dt_minus$hera_runtime),digits=2)" minutes per job) in an elapsed time of ["r round(as.numeric(abs(difftime(min(comptime_dt_minus$hera_start),max(comptime_dt_minus$hera_end),units="mins"))),digits=2)" minutes]{.fragment .hl-blue fragment-index=3} or $\sim$ "r round(1/(as.numeric(abs(difftime(min(comptime_dt_minus$hera_start),max(comptime_dt_minus$hera_end),units="mins")))/sum(comptime_dt_minus$hera_runtime)))" $\times$ faster.
 :::
 
 :::
