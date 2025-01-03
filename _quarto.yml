@@ -7,8 +7,8 @@ project:
 website:
   title: "Open Science Workflow Training for ISC"
   reader-mode: true
-  site-url: "https://moshima-pifsc.github.io/ISC_OSworkflow_training" 
-  repo-url: "https://github.com/MOshima-PIFSC/ISC_OSworkflow_training"
+  site-url: "https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev" 
+  repo-url: "https://github.com/MOshima-PIFSC/ISC_OSworkflow_training_dev"
   repo-actions: [source, issue]
   search: true
   back-to-top-navigation: true
@@ -19,26 +19,34 @@ website:
     search: true
     tools:
       - icon: github
-        href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training
+        href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training_dev
     contents: 
       - text: "Home"
         file: index.qmd
-      - text: "Seminar slides"
-        file: assets/web-slides.qmd
-      - section: "Documentation"
+      #- text: "Seminar slides"
+      #  file: assets/web-slides.qmd
+      - section: "Day 1"
         contents: 
-        - text: "Working with NOAA HPC Hera"
-          file: "assets/hera_documentation.qmd"
+        - text: "Github"
+          file: "assets/Day_1/github_basics.qmd"
+        - text: "Codespaces"
+          file: "assets/Day_1/codespaces.qmd"
+        - text: "Reproducible Environments"
+          file: "assets/Day_1/reproducible_environments.qmd"
+      - section: "Day 2"
+      - section: "Day 3"
       - section: "Contact us"
         contents:
         - text: "Nicholas Ducharme-Barth"
           file: assets/web-about-nd.qmd
         - text: "Megumi Oshima"
           file: assets/web-about-mo.qmd
+        - text: "Michelle Sculley"
+          file: assets/web-about-ms.qmd
       - section: "Support"
         contents:
         - text: "Submit an issue"
-          href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training/issues/new/choose
+          href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training_dev/issues/new/choose
 
 format: 
   html:

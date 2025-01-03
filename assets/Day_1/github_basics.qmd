@@ -1,0 +1,23 @@
+---
+title: "Introduction to Github"
+date: last-modified
+date-format: iso
+published-title: "Last updated"
+author: 
+  - Nicholas Ducharme-Barth
+  - Megumi Oshima
+  - Michelle Sculley
+engine: knitr
+execute:
+    eval: false
+    echo: true
+    output: false
+format:
+  html:
+    embed-resources: true
+    toc: true
+    toc-location: right
+    number-sections: true
+    code-overflow: wrap
+---
+
