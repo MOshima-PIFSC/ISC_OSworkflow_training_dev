@@ -1,0 +1,16 @@
+---
+title: "Michelle Sculley"
+about:
+  template: jolla
+  image: static/mo.jpeg
+  links:
+    - icon: person-workspace
+      text: Contact
+      href: https://www.fisheries.noaa.gov/contact/michelle-sculley-phd
+    - icon: github
+      text: Github
+      href: https://github.com/michellesculley
+---
+
+
+*fill with short bio
