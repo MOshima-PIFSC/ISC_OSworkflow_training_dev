@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/index.html</loc>
-    <lastmod>2025-01-03T19:31:03.284Z</lastmod>
-  </url>
-  <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-nd.html</loc>
-    <lastmod>2025-01-03T19:31:03.229Z</lastmod>
-  </url>
-  <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-mo.html</loc>
-    <lastmod>2025-01-03T19:31:03.227Z</lastmod>
+    <lastmod>2025-01-03T19:52:04.188Z</lastmod>
   </url>
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/hera_documentation.html</loc>
-    <lastmod>2025-01-03T19:31:03.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/Day_1/github_basics.html</loc>
-    <lastmod>2025-01-03T19:31:03.125Z</lastmod>
+    <lastmod>2025-01-03T19:52:04.134Z</lastmod>
   </url>
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/Day_1/codespaces.html</loc>
-    <lastmod>2025-01-03T19:31:03.124Z</lastmod>
-  </url>
-  <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/Day_1/reproducible_environments.html</loc>
-    <lastmod>2025-01-03T19:31:03.126Z</lastmod>
+    <lastmod>2025-01-03T19:52:04.134Z</lastmod>
   </url>
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/presentation.html</loc>
-    <lastmod>2025-01-03T19:31:03.140Z</lastmod>
+    <lastmod>2025-01-03T19:52:04.134Z</lastmod>
   </url>
   <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-ms.html</loc>
-    <lastmod>2025-01-03T19:31:03.228Z</lastmod>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-mo.html</loc>
+    <lastmod>2025-01-03T19:52:04.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-nd.html</loc>
+    <lastmod>2025-01-03T19:52:04.156Z</lastmod>
   </url>
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-slides.html</loc>
-    <lastmod>2025-01-03T19:31:03.230Z</lastmod>
+    <lastmod>2025-01-03T19:52:04.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/Day_1/github_basics.html</loc>
+    <lastmod>2025-01-03T19:52:04.134Z</lastmod>
+  </url>
+  <url>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/Day_1/reproducible_environments.html</loc>
+    <lastmod>2025-01-03T19:52:04.134Z</lastmod>
+  </url>
+  <url>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-ms.html</loc>
+    <lastmod>2025-01-03T19:52:04.156Z</lastmod>
   </url>
 </urlset>

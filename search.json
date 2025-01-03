@@ -10,28 +10,6 @@
     ]
   },
   {
-    "objectID": "assets/web-about-nd.html",
-    "href": "assets/web-about-nd.html",
-    "title": "Nicholas Ducharme-Barth",
-    "section": "",
-    "text": "Nicholas Ducharme-Barth joined the Pacific Islands Fisheries Science Center in 2021. Previously, Nicholas worked at the Pacific Community (SPC) conducting pelagic stock assessments for the Western and Central Pacific Fisheries Commission (WCPFC). He received his B.S. in Mathematics from the College of William & Mary and his Ph. D. in Fisheries and Aquatic Sciences from the University of Florida.\n\n\n Back to top",
-    "crumbs": [
-      "Contact us",
-      "Nicholas Ducharme-Barth"
-    ]
-  },
-  {
-    "objectID": "assets/web-about-mo.html",
-    "href": "assets/web-about-mo.html",
-    "title": "Megumi Oshima",
-    "section": "",
-    "text": "Megumi Oshima has been working at the Pacific Islands Fisheries Science Center since 2021. She works mostly on domestic and territorial bottomfish stocks and is interested in Openscience and creating reproducible and transparent workflows. Before joining PIFSC, she was a graduate student at University of Southern Mississippi where she got her PhD in Coastal Sciences.\n\n\n Back to top",
-    "crumbs": [
-      "Contact us",
-      "Megumi Oshima"
-    ]
-  },
-  {
     "objectID": "assets/hera_documentation.html",
     "href": "assets/hera_documentation.html",
     "title": "Working with NOAA HPC Hera",
@@ -60,17 +38,6 @@
     "text": "3 Transferring files to/from Hera\n\n3.1 via scp using data transfer node (DTN)\nInformation in this section is largely based on this wiki. File transfer using a DTN is only possible from machines within the noaa.gov domain (VPN ok), and can only transfer files to the scratch directory. However, this is ok since it is recommended that input/output data files are stored in the scratch directory. Using a DTN is faster than using the ssh tunnel.\n\n\n\n\n\n\nNote\n\n\n\nThe scratch1/NMFS/project_name/ directory is a shared space (shared access and shared disk space) for all users of a project. Rather than dumping files into the root project directory (e.g., project_name/) it is better to place them in your own sub-directory. Since this sub-directory structure does not already exist you will need to log into Hera and create it:\n\nmkdir scratch1/NMFS/project_name/User.Name/\n\nThis will avoid over-writing other users’ work.\n\n\nFile transfer takes place via scp and you need to specify the source file (and path to the file if your terminal is not in that directory) and destination path as shown:\n\n## format is scp &lt;source&gt; &lt;destination&gt; \nscp /path/to/local/file User.Name@dtn-hera.fairmont.rdhpcs.noaa.gov:/scratch1/NMFS/project_name/User.Name/\n\nIf trying to transfer from a machine not within the NOAA domain (or on the VPN) you can use scp with an untrusted DTN:\n\nscp /path/to/local/file User.Name@udtn-hera.fairmont.rdhpcs.noaa.gov:/scratch1/data_untrusted/User.Name/\n\nNote that dtn-hera was changed to udtn-hera. Since files cannot stay in the data_untrusted directory we will need to log in to Hera and move it to the correct project directory on scratch. Once logged in, moving the files can be done with rsync, and then they can be deleted from data_untrusted by:\n\nrsync -axv /scratch1/data_untrusted/User.Name/file /scratch1/NMFS/project_name/User.Name/\nrm /scratch1/data_untrusted/User.Name/file\n\nFiles can be downloaded back to your local machine using scp from either the trusted (dtn) or untrusted (udtn) DTN:\n\nscp User.Name@dtn-hera.fairmont.rdhpcs.noaa.gov:/scratch1/NMFS/project_name/User.Name/file /path/to/local/file \n\n\n\n3.2 via scp using an ssh tunnel\nInformation in this section is largely based on this wiki. File transfer using an ssh tunnel is possible from all locations. Using the ssh tunnel for file transfer requires a two-step process with two active terminal windows (we suggest using PowerShell):\n\nIn the first terminal window, open an ssh connection to Hera with port forwarding:\n\n\nssh -m hmac-sha2-256-etm@openssh.com -LXXXXX:localhost:XXXXX User.Name@hera-rsa.bastion.rdhpcs.noaa.gov\n\nReplace XXXXX with your local port number.\n\nIn the second terminal window you can check to see if the tunnel was properly created:\n\n\nssh -p XXXXX User.Name@localhost\n\nif you get prompted for your password then success! Press CONTROL+C to ignore this prompt. Staying within this 2nd terminal window use scp to transfer your file:\n\nscp -P XXXXX /path/to/local/file User.Name@localhost:/home/User.Name/\n\nThis will copy your file from your local machine into your home directory on Hera. Simply append additional directory structure to /home/User.Name/ to copy it into a sub-directory that you have created on Hera (e.g., /home/User.Name/sub/dir/). To transfer files into your scratch directory, specify the proper destination path (e.g., /scratch1/NMFS/project_name/User.Name/).\nTo download a file from Hera using scp and the ssh tunnel use the following:\n\nscp -P XXXXX User.Name@localhost:/home/User.Name/file_name /path/to/local/file"
   },
   {
-    "objectID": "assets/Day_1/github_basics.html",
-    "href": "assets/Day_1/github_basics.html",
-    "title": "Introduction to Github",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "Day 1",
-      "Github"
-    ]
-  },
-  {
     "objectID": "assets/Day_1/codespaces.html",
     "href": "assets/Day_1/codespaces.html",
     "title": "Open Science Workflow Training for ISC",
@@ -79,17 +46,6 @@
     "crumbs": [
       "Day 1",
       "Codespaces"
-    ]
-  },
-  {
-    "objectID": "assets/Day_1/reproducible_environments.html",
-    "href": "assets/Day_1/reproducible_environments.html",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "Day 1",
-      "Reproducible Environments"
     ]
   },
   {
@@ -359,6 +315,57 @@
     "text": "References\n\n\nOSG. 2006. “OSPool.” OSG. https://doi.org/10.21231/906P-4D78.\n\n\n———. 2015. “Open Science Data Federation.” OSG. https://doi.org/10.21231/0KVZ-VE57.\n\n\nPordes, Ruth, Don Petravick, Bill Kramer, Doug Olson, Miron Livny, Alain Roy, Paul Avery, et al. 2007. “The Open Science Grid.” In J. Phys. Conf. Ser., 78:012057. 78th Series. https://doi.org/10.1088/1742-6596/78/1/012057.\n\n\nSfiligoi, Igor, Daniel C Bradley, Burt Holzman, Parag Mhashilkar, Sanjay Padhi, and Frank Wurthwein. 2009. “The Pilot Way to Grid Resources Using glideinWMS.” In 2009 WRI World Congress on Computer Science and Information Engineering, 2:428–32. 2nd Series. https://doi.org/10.1109/CSIE.2009.950."
   },
   {
+    "objectID": "assets/web-about-mo.html",
+    "href": "assets/web-about-mo.html",
+    "title": "Megumi Oshima",
+    "section": "",
+    "text": "Megumi Oshima has been working at the Pacific Islands Fisheries Science Center since 2021. She works mostly on domestic and territorial bottomfish stocks and is interested in Openscience and creating reproducible and transparent workflows. Before joining PIFSC, she was a graduate student at University of Southern Mississippi where she got her PhD in Coastal Sciences.\n\n\n Back to top",
+    "crumbs": [
+      "Contact us",
+      "Megumi Oshima"
+    ]
+  },
+  {
+    "objectID": "assets/web-about-nd.html",
+    "href": "assets/web-about-nd.html",
+    "title": "Nicholas Ducharme-Barth",
+    "section": "",
+    "text": "Nicholas Ducharme-Barth joined the Pacific Islands Fisheries Science Center in 2021. Previously, Nicholas worked at the Pacific Community (SPC) conducting pelagic stock assessments for the Western and Central Pacific Fisheries Commission (WCPFC). He received his B.S. in Mathematics from the College of William & Mary and his Ph. D. in Fisheries and Aquatic Sciences from the University of Florida.\n\n\n Back to top",
+    "crumbs": [
+      "Contact us",
+      "Nicholas Ducharme-Barth"
+    ]
+  },
+  {
+    "objectID": "assets/web-slides.html",
+    "href": "assets/web-slides.html",
+    "title": "Seminar slides",
+    "section": "",
+    "text": "Seminar slides from the NOAA National Stock Assessment Science Seminar Series presentation.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top"
+  },
+  {
+    "objectID": "assets/Day_1/github_basics.html",
+    "href": "assets/Day_1/github_basics.html",
+    "title": "Introduction to Github",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "Day 1",
+      "Github"
+    ]
+  },
+  {
+    "objectID": "assets/Day_1/reproducible_environments.html",
+    "href": "assets/Day_1/reproducible_environments.html",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "Day 1",
+      "Reproducible Environments"
+    ]
+  },
+  {
     "objectID": "assets/web-about-ms.html",
     "href": "assets/web-about-ms.html",
     "title": "Michelle Sculley",
@@ -368,12 +375,5 @@
       "Contact us",
       "Michelle Sculley"
     ]
-  },
-  {
-    "objectID": "assets/web-slides.html",
-    "href": "assets/web-slides.html",
-    "title": "Seminar slides",
-    "section": "",
-    "text": "Seminar slides from the NOAA National Stock Assessment Science Seminar Series presentation.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top"
   }
 ]
