@@ -3,7 +3,6 @@ project:
   resources:
    - assets/*
 
-
 website:
   title: "Open Science Workflow Training for ISC"
   reader-mode: true
@@ -23,14 +22,15 @@ website:
     contents: 
       - text: "Home"
         file: index.qmd
-      #- text: "Seminar slides"
-      #  file: assets/web-slides.qmd
-      - text: "Github"
-        file: "assets/Day_1/github_basics.qmd"
-      - text: "Codespaces"
-        file: "assets/Day_1/codespaces.qmd"
-      - text: "Reproducible Environments"
-        file: "assets/Day_1/reproducible_environments.qmd"
+      - section: "Day 1"
+        href: assets/day-1.html
+        contents:
+          - text: "Codespaces"
+            file: assets/day-1-codespaces.qmd
+          - text: "Reproducible environments"
+            file: assets/day-1-reproducible_environments.qmd
+          - text: "Github"
+            file: assets/day-1-github_basics.qmd
       - section: "Contact us"
         contents:
         - text: "Nicholas Ducharme-Barth"
