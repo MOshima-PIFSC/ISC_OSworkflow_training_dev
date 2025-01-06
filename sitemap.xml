@@ -2,42 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/index.html</loc>
-    <lastmod>2025-01-04T02:23:59.147Z</lastmod>
+    <lastmod>2025-01-06T18:48:09.509Z</lastmod>
   </url>
   <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/hera_documentation.html</loc>
-    <lastmod>2025-01-04T02:23:59.093Z</lastmod>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/day-1.html</loc>
+    <lastmod>2025-01-06T18:48:09.454Z</lastmod>
   </url>
   <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-slides.html</loc>
-    <lastmod>2025-01-04T02:23:59.115Z</lastmod>
-  </url>
-  <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/codespaces.html</loc>
-    <lastmod>2025-01-04T02:23:59.093Z</lastmod>
-  </url>
-  <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/github_basics.html</loc>
-    <lastmod>2025-01-04T02:23:59.093Z</lastmod>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/day-1-reproducible_environments.html</loc>
+    <lastmod>2025-01-06T18:48:09.453Z</lastmod>
   </url>
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-nd.html</loc>
-    <lastmod>2025-01-04T02:23:59.115Z</lastmod>
+    <lastmod>2025-01-06T18:48:09.477Z</lastmod>
+  </url>
+  <url>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/day-1-codespaces.html</loc>
+    <lastmod>2025-01-06T18:48:09.453Z</lastmod>
   </url>
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-mo.html</loc>
-    <lastmod>2025-01-04T02:23:59.115Z</lastmod>
+    <lastmod>2025-01-06T18:48:09.477Z</lastmod>
   </url>
   <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/reproducible_environments.html</loc>
-    <lastmod>2025-01-04T02:23:59.094Z</lastmod>
-  </url>
-  <url>
-    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/presentation.html</loc>
-    <lastmod>2025-01-04T02:23:59.094Z</lastmod>
+    <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/day-1-github_basics.html</loc>
+    <lastmod>2025-01-06T18:48:09.453Z</lastmod>
   </url>
   <url>
     <loc>https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev/assets/web-about-ms.html</loc>
-    <lastmod>2025-01-04T02:23:59.115Z</lastmod>
+    <lastmod>2025-01-06T18:48:09.477Z</lastmod>
   </url>
 </urlset>
