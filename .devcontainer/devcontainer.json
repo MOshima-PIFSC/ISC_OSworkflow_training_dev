@@ -14,7 +14,7 @@
         	"installChromium": "false" // needed for screen capture of htmlwidgets
         },
         "ghcr.io/rocker-org/devcontainer-features/r-rig:1": {
-			"version": "4.4.0", // To install the latest R version use "release".
+			"version": "4.4.2", // To install the latest R version use "release".
 			"vscodeRSupport": "none",
 			"installDevTools": "false",
 			"installREnv": "true",
