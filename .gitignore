@@ -28,9 +28,15 @@ ss3.*
 /SS model/plots/*
 
 #exceptions 
-!/stock-synthesis-models/base-model/data.ss
-!/stock-synthesis-models/base-model/control.ss
-!/stock-synthesis-models/base-model/starter.ss
-!/stock-synthesis-models/base-model/forecast.ss
+!data.ss
+!control.ss
+!starter.ss
+!forecast.ss
+!Report.sso
+!CompReport.sso
+!covar.sso
+!Forecast-report.sso
+!wtatage.ss_new
+!warning.sso
 !/bin/*
 !executables/stock-synthesis/3.30.23.1/ss3_win.exe
