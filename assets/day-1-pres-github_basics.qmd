@@ -1,0 +1,98 @@
+---
+format: 
+ revealjs:
+  theme: [default, customizations/presentation-custom.scss]
+  footer: "ISC Open Science Worflows Workshop 2025"
+  logo: static/noaa-fisheries-logo.png
+  css: customizations/logo.css
+  slide-number: true
+  revealjs-plugins:
+  - codewindow
+  mermaid-format: svg
+embed-resources: true
+#bibliography: customizations/osg.bib
+---
+
+## {.center}
+::: {.titlebox style="text-align:center; font-size: 1.25em;"}
+
+[Version Control with Github]{.blue-title}
+
+
+[Megumi Oshima & Nicholas Ducharme-Barth]{.blue style="font-size:0.5em;"}  
+
+[January 2025]{.blue style="font-size:0.5em;"}
+:::
+
+
+## Git and Github
+
+::: columns
+::: {.column width="45%"}
+
+[Git]{.blue}
+
+- Local machine
+
+- Version control
+
+:::
+
+::: {.column width="45%"}
+
+[Github]{.blue}
+
+- Online
+
+- For hosting repositories of your code
+
+:::
+:::
+
+## Repository 
+This is where all of your code and related files lives online   
+You can clone a repository onto your computer and that copies all of the files and their history as well onto your computer
+
+# Making Changes
+Once you make changes to your files, you need update the repository with the new versions
+
+## Commits
+Commits are:  
+
+* groups of small, meaningful changes 
+
+* snapshots of your repository at that time 
+
+* tell a story of the history of your repository  
+
+## Commits  
+Make a commit in 2 stages:  
+
+1. save your changes locally and then stage the files you want to commit (files that include changes you want to record)
+    `git add <FILENAME>`  
+
+2. commit your changes 
+    `git commit -m "descriptive commit message"`  
+
+## Push 
+To sync the changes you've made locally with the remote repository, you need to "PUSH" your commits 
+
+`git push`
+
+## Pull
+If you are collaborating with someone else, to get their changes onto your local computer, you need to "PULL" their changes 
+
+`git pull`
+
+## Branches
+Allow you to develop features, fix bugs, or safely experiment with new ideas in a contained section of the project. 
+This allows you to make changes that don't affect the main branch.  
+Good for feature developlement, exploration, when collaborating with others, etc.   
+
+## Merging Branches Back 
+
+
+
+# Live Demo 
+
+Let's make our first commit!

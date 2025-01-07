@@ -10,13 +10,21 @@
     ]
   },
   {
-    "objectID": "assets/day-1.html",
-    "href": "assets/day-1.html",
-    "title": "Day 1",
+    "objectID": "assets/day-1-pres-modify-stock-synthesis.html#section",
+    "href": "assets/day-1-pres-modify-stock-synthesis.html#section",
+    "title": "Open Science Workflow Training for ISC",
     "section": "",
-    "text": "Presentation slides for the GitHub basics presentation.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
+    "text": "Modifying and running stock synthesis models\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
+  },
+  {
+    "objectID": "assets/day-1-modify-stock-synthesis.html",
+    "href": "assets/day-1-modify-stock-synthesis.html",
+    "title": "Modifying and running stock synthesis models",
+    "section": "",
+    "text": "Back to top",
     "crumbs": [
-      "Day 1"
+      "Day 1",
+      "Modifying Stock Synthesis files"
     ]
   },
   {
@@ -64,8 +72,18 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#section",
-    "href": "assets/day-1-github_basics.html#section",
+    "objectID": "assets/day-1.html",
+    "href": "assets/day-1.html",
+    "title": "Day 1",
+    "section": "",
+    "text": "Presentation slides for the GitHub basics presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
+    "crumbs": [
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "assets/day-1-pres-github_basics.html#section",
+    "href": "assets/day-1-pres-github_basics.html#section",
     "title": "Open Science Workflow Training for ISC",
     "section": "",
     "text": "Version Control with Github\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025",
@@ -75,8 +93,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#git-and-github",
-    "href": "assets/day-1-github_basics.html#git-and-github",
+    "objectID": "assets/day-1-pres-github_basics.html#git-and-github",
+    "href": "assets/day-1-pres-github_basics.html#git-and-github",
     "title": "Open Science Workflow Training for ISC",
     "section": "Git and Github",
     "text": "Git and Github\n\n\nGit\n\nLocal machine\nVersion control\n\n\nGithub\n\nOnline\nFor hosting repositories of your code",
@@ -86,8 +104,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#repository",
-    "href": "assets/day-1-github_basics.html#repository",
+    "objectID": "assets/day-1-pres-github_basics.html#repository",
+    "href": "assets/day-1-pres-github_basics.html#repository",
     "title": "Open Science Workflow Training for ISC",
     "section": "Repository",
     "text": "Repository\nThis is where all of your code and related files lives online\nYou can clone a repository onto your computer and that copies all of the files and their history as well onto your computer",
@@ -97,8 +115,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#commits",
-    "href": "assets/day-1-github_basics.html#commits",
+    "objectID": "assets/day-1-pres-github_basics.html#commits",
+    "href": "assets/day-1-pres-github_basics.html#commits",
     "title": "Open Science Workflow Training for ISC",
     "section": "Commits",
     "text": "Commits\nCommits are:\n\ngroups of small, meaningful changes\nsnapshots of your repository at that time\ntell a story of the history of your repository",
@@ -108,8 +126,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#commits-1",
-    "href": "assets/day-1-github_basics.html#commits-1",
+    "objectID": "assets/day-1-pres-github_basics.html#commits-1",
+    "href": "assets/day-1-pres-github_basics.html#commits-1",
     "title": "Open Science Workflow Training for ISC",
     "section": "Commits",
     "text": "Commits\nMake a commit in 2 stages:\n\nsave your changes locally and then stage the files you want to commit (files that include changes you want to record) git add &lt;FILENAME&gt;\ncommit your changes git commit -m \"descriptive commit message\"",
@@ -119,8 +137,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#push",
-    "href": "assets/day-1-github_basics.html#push",
+    "objectID": "assets/day-1-pres-github_basics.html#push",
+    "href": "assets/day-1-pres-github_basics.html#push",
     "title": "Open Science Workflow Training for ISC",
     "section": "Push",
     "text": "Push\nTo sync the changes you’ve made locally with the remote repository, you need to “PUSH” your commits\ngit push",
@@ -130,8 +148,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#pull",
-    "href": "assets/day-1-github_basics.html#pull",
+    "objectID": "assets/day-1-pres-github_basics.html#pull",
+    "href": "assets/day-1-pres-github_basics.html#pull",
     "title": "Open Science Workflow Training for ISC",
     "section": "Pull",
     "text": "Pull\nIf you are collaborating with someone else, to get their changes onto your local computer, you need to “PULL” their changes\ngit pull",
@@ -141,8 +159,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#branches",
-    "href": "assets/day-1-github_basics.html#branches",
+    "objectID": "assets/day-1-pres-github_basics.html#branches",
+    "href": "assets/day-1-pres-github_basics.html#branches",
     "title": "Open Science Workflow Training for ISC",
     "section": "Branches",
     "text": "Branches\nAllow you to develop features, fix bugs, or safely experiment with new ideas in a contained section of the project. This allows you to make changes that don’t affect the main branch.\nGood for feature developlement, exploration, when collaborating with others, etc.",
@@ -152,8 +170,8 @@
     ]
   },
   {
-    "objectID": "assets/day-1-github_basics.html#merging-branches-back",
-    "href": "assets/day-1-github_basics.html#merging-branches-back",
+    "objectID": "assets/day-1-pres-github_basics.html#merging-branches-back",
+    "href": "assets/day-1-pres-github_basics.html#merging-branches-back",
     "title": "Open Science Workflow Training for ISC",
     "section": "Merging Branches Back",
     "text": "Merging Branches Back",
