@@ -1,6 +1,6 @@
 
 ui = dashboardPage(
-  header = dashboardHeader(title="2025 ISC Openscience workflows"),
+  header = dashboardHeader(title="Shiny demo"),
   sidebar = dashboardSidebar(
     br(),
     br(),
