@@ -11,7 +11,7 @@
     library(r4ss)
 
 #_____________________________________________________________________________________________________________________________
-# set working directory & define paths
+# define paths
 	proj_dir = this.path::this.proj()
 	dir_model = paste0(proj_dir,"/stock-synthesis-models/")
     dir_exec = paste0(proj_dir,"/executables/stock-synthesis/3.30.23.1/")

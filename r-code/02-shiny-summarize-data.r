@@ -1,8 +1,7 @@
 
 # Nicholas Ducharme-Barth
 # 2025/01/06
-# R code to modify a baseline stock synthesis model
-# change steepness and run alternative versions of the model
+# summarize model runs for Shiny app
 
 # Copyright (c) 2025 Nicholas Ducharme-Barth
 
@@ -13,7 +12,7 @@ library(magrittr)
 library(r4ss)
 
 #_____________________________________________________________________________________________________________________________
-# set working directory & define paths
+# define paths
 	proj_dir = this.path::this.proj()
 	dir_model = paste0(proj_dir,"/stock-synthesis-models/")
 
@@ -33,14 +32,28 @@ library(r4ss)
   model_steepness = sapply(output,function(x)x[["parameters"]]["SR_BH_steep","Value"])
 
   # we want to build a shiny app that shows the stock recruit curve for each model so we will need to extract the corresponding data
-  srr_dt.list = as.list(rep(NA,length(all_dirs)))
-  for(i in seq_along(srr_dt.list)){
-    srr_dt.list[[i]] = as.data.table(output[[i]]$SPAWN_RECR_CURVE) %>%
+  # expected stock recruit relationship (srr)
+  expected_srr_dt.list = as.list(rep(NA,length(all_dirs)))
+  for(i in seq_along(expected_srr_dt.list)){
+    expected_srr_dt.list[[i]] = as.data.table(output[[i]]$SPAWN_RECR_CURVE) %>%
                        .[,model_name:=names(output[i])] %>%
-                       .[,.(model_name,SSB,Recruitment)]
+                       .[,.(model_name,SSB,Recruitment)] %>%
+                       setnames(.,c("SSB","Recruitment"),c("ssb","rec_actual"))
   }
-  srr_dt = rbindlist(srr_dt.list)
-  fwrite(srr_dt,file=paste0(proj_dir,"/shiny-data/srr.csv"))
+  expected_srr_dt = rbindlist(expected_srr_dt.list)
+  fwrite(expected_srr_dt,file=paste0(proj_dir,"/shiny-data/expected_srr.csv"))
+
+  # annual estimated recruitments and corresponding spawning biomass
+  est_recruit_dt.list = as.list(rep(NA,length(all_dirs)))
+  for(i in seq_along(est_recruit_dt.list)){
+    est_recruit_dt.list[[i]] = as.data.table(output[[i]]$recruit) %>%
+                       .[,model_name:=names(output[i])] %>%
+                       .[era=="Main"] %>%
+                       .[,.(model_name,Yr,SpawnBio,pred_recr)] %>%
+                       setnames(.,c("Yr","SpawnBio","pred_recr"),c("yr","ssb","rec_estimated"))
+  }
+  est_recruit_dt = rbindlist(est_recruit_dt.list)
+  fwrite(est_recruit_dt,file=paste0(proj_dir,"/shiny-data/est_recruit.csv"))
 #_____________________________________________________________________________________________________________________________
 # make summary files to run the shiny app from
   summary_dt = data.table(model_name=names(output),steepness=model_steepness)
