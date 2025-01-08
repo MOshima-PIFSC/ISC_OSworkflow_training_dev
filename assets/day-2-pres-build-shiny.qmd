@@ -10,7 +10,6 @@ format:
   - codewindow
   mermaid-format: svg
 embed-resources: true
-#bibliography: customizations/osg.bib
 ---
 
 ## {.center}
@@ -24,4 +23,26 @@ embed-resources: true
 [January 2025]{.blue style="font-size:0.5em;"}
 :::
 
+## What is Shiny?
 
+</br> 
+
+[Shiny](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/){preview-link="true"} is a package that can be used to build interactive web apps in either R or Python.
+
+![](static/shiny-logo.png){.absolute top=40% left=25% height=20% style="max-height: unset; max-width: unset;"}
+
+::: {.absolute left=25% top=65% style="font-size:1em;"}
+Let's look at an [example](https://shiny.posit.co/r/gallery/start-simple/kmeans-example/){.blue preview-link="true"}!
+:::
+
+## Why?
+
+</br>
+
+::: {.incremental} 
+- Interactive dashboards can [help with communicating science]{.blue}, and making it more accessible
+- Useful for analysts to [visualize data]{.blue} or model outputs
+- [Facilitates multi-model comparisons]{.blue} which can assist in model development and building intuition about the model.
+:::
+
+## How to build?

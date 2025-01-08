@@ -1,7 +1,14 @@
+library(data.table)
+library(magrittr)
+library(ggplot2)
+library(viridis)
 
 server = function(input, output){
   # pixel height for each panel. i.e row height when plotting by species
   height_per_panel = 350
+
+  # load data needed for shiny app
+    summary_dt = fread(file="./shiny-data/summary.csv")
 
   ref_table_reduced = summary_dt %>%
                 as.data.frame(.)
@@ -28,9 +35,9 @@ server = function(input, output){
       return(warning("Please select at least one model."))
     }
 
-    expected_srr_dt = fread(file=paste0(proj_dir,"/shiny-data/expected_srr.csv")) %>%
+    expected_srr_dt = fread(file="./shiny-data/expected_srr.csv") %>%
                       .[model_name %in% input_models]
-    est_recruit_dt = fread(file=paste0(proj_dir,"/shiny-data/est_recruit.csv")) %>%
+    est_recruit_dt = fread(file="./shiny-data/est_recruit.csv") %>%
                       .[model_name %in% input_models]
 
     p = expected_srr_dt %>%

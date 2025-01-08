@@ -1,7 +1,18 @@
+library(shinydashboard)
+library(shinyWidgets)
 
-ui = dashboardPage(
-  header = dashboardHeader(title="Shiny demo"),
-  sidebar = dashboardSidebar(
+css <- htmltools::HTML(
+    "#summarytable > .dataTables_wrapper.no-footer > .dataTables_scroll > .dataTables_scrollBody {
+        transform:rotateX(180deg);
+    }
+    #summarytable > .dataTables_wrapper.no-footer > .dataTables_scroll > .dataTables_scrollBody table{
+        transform:rotateX(180deg);
+    }"
+)
+
+ui = shinydashboard::dashboardPage(
+  header = shinydashboard::dashboardHeader(title="Shiny demo"),
+  sidebar = shinydashboard::dashboardSidebar(
     br(),
     br(),
     sidebarMenu(id="sidebarmenu",
@@ -38,26 +49,26 @@ ui = dashboardPage(
     )
   ), # End of sidebar
 
-  body = dashboardBody(
+  body = shinydashboard::dashboardBody(
     tags$head(tags$style(HTML('.wrapper {height: auto !important; position:relative; overflow-x:hidden; overflow-y:hidden}') )),
     tags$head(tags$style(css)),
     # Start of main tab stuff
     tabItems(
       # **** Introduction ****
       tabItem(tabName="introduction", h2("Introduction"),
-        fluidRow(column(12, includeMarkdown(paste0("./r-code/shiny/introduction_index.md"))))
+        fluidRow(column(12, includeMarkdown("./introduction_index.md")))
       ), # End of introduction tab
 
       # **** Summary table ****
       tabItem(tabName="table", h2("Summary table"),
-        fluidRow(box(title="Model metrics", collapsed=start_collapsed, solidHeader=TRUE, collapsible=TRUE, status="primary", width=12,
+        fluidRow(box(title="Model metrics", collapsed=FALSE, solidHeader=TRUE, collapsible=TRUE, status="primary", width=12,
          DT::dataTableOutput("summarytable")))
       ), # End of table tab
 
       # **** Stock recruitment plots ****
       tabItem(tabName="srr_plots", h2("Stock-recruitment plots"),
         fluidRow(
-          box(title="Stock-recruitment relationship (SRR)", solidHeader=TRUE, collapsible=TRUE, collapsed=start_collapsed, status="primary", width=12,
+          box(title="Stock-recruitment relationship (SRR)", solidHeader=TRUE, collapsible=TRUE, collapsed=FALSE, status="primary", width=12,
             p("Select at least one model."),
             plotOutput("srr_plots", height="auto"))
         )
