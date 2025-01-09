@@ -31,8 +31,10 @@ embed-resources: true
 
 ![](static/shiny-logo.png){.absolute top=40% left=25% height=20% style="max-height: unset; max-width: unset;"}
 
-::: {.absolute left=25% top=65% style="font-size:1em;"}
+::: {.fragment .fade-in}
+::: {.absolute left=20% top=65% style="font-size:1em;"}
 Let's look at an [example](https://shiny.posit.co/r/gallery/start-simple/kmeans-example/){.blue preview-link="true"}!
+:::
 :::
 
 ## Why?
@@ -46,3 +48,80 @@ Let's look at an [example](https://shiny.posit.co/r/gallery/start-simple/kmeans-
 :::
 
 ## How to build?
+
+</br>
+
+All [Shiny](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/){preview-link="true"} apps need three components:
+
+::: {.incremental}
+- a user interface ([`ui.R`]{.blue}): this is the *interactive* part
+- a server ([`server.R`]{.blue}): this is the *computation/plotting* engine
+- a call to `shiny::shinyApp()` ([`app.R`]{.blue}): this ties everything together and *launches* the app
+:::
+
+::: {.fragment .fade-in}
+::: {.absolute left=15% top=77.5% style="font-size:1em;"}
+Let's look closer at each component.
+:::
+:::
+
+## User interface
+
+::: {.fragment .fade-out fragment-index=2}
+![](static/shiny-kmeans-full.png){.absolute top=15% left=0% height=50% style="border: 1px solid #323C46; max-height: unset; max-width: unset; box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .5); border-radius: 5px;"}
+:::
+
+::: {.fragment .fade-out fragment-index=1}
+::: {.absolute left=15% top=70% style="font-size:0.8em;"}
+App appearance (GUI & plot window) controlled by [`ui.R`]{.blue}, specifically `pageWithSidebar()`.
+:::
+:::
+
+::: {.fragment .fade-out fragment-index=2}
+::: {.fragment .fade-in fragment-index=1}
+::: {.absolute left="0%" top="15%" right="67.5%" bottom="30%" style="border: 3px solid #002364; border-radius: 5px; max-height: unset; max-width: unset;"}
+
+:::
+::: 
+:::
+
+::: {.fragment .fade-out fragment-index=2}
+::: {.fragment .fade-in fragment-index=1}
+::: {.absolute left=15% top=70% style="font-size:0.8em;"}
+Let's focus on the GUI panel *aka* the sidebar.
+:::
+:::
+:::
+
+
+::: {.fragment .fade-in fragment-index=2}
+![](static/shiny-kmeans-ui.png){.absolute top=15% left=0% height=50% style="border: 1px solid #323C46; max-height: unset; max-width: unset; box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .5); border-radius: 5px;"}
+:::
+
+::: {.fragment .fade-in fragment-index=2}
+::: {.absolute top="15%" left="40%" right="0%" style="font-size: 0.5em;"}
+```{.r code-line-numbers="|3-12|4|5-8|6|7|8|10-12"}
+vars <- setdiff(names(iris), "Species")
+
+pageWithSidebar(
+  headerPanel('Iris k-means clustering'),
+  sidebarPanel(
+    selectInput('xcol', 'X Variable', vars),
+    selectInput('ycol', 'Y Variable', vars, selected = vars[[2]]),
+    numericInput('clusters', 'Cluster count', 3, min = 1, max = 9)
+  ),
+  mainPanel(
+    plotOutput('plot1')
+  )
+)
+```
+:::
+:::
+
+
+::: {.fragment .fade-in fragment-index=2}
+::: {.absolute left=0% top=75% style="font-size:0.75em;"}
+- GUI defined by `headerPanel()` and `sidebarPanel()`.
+- Plot panel defined by `plotOutput()` within `mainPanel()`.
+:::
+:::
