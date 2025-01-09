@@ -54,6 +54,7 @@ library(r4ss)
   }
   est_recruit_dt = rbindlist(est_recruit_dt.list)
   fwrite(est_recruit_dt,file=paste0(proj_dir,"shiny/shiny-data/est_recruit.csv"))
+  
 #_____________________________________________________________________________________________________________________________
 # make summary files to run the shiny app from
   summary_dt = data.table(model_name=names(output),steepness=model_steepness)
