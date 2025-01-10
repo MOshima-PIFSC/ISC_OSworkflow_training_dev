@@ -1,0 +1,228 @@
+---
+format: 
+ revealjs:
+  theme: [default, customizations/presentation-custom.scss]
+  footer: "ISC Open Science Worflows Workshop 2025"
+  logo: static/noaa-fisheries-logo.png
+  css: customizations/logo.css
+  slide-number: true
+  revealjs-plugins:
+  - codewindow
+  mermaid-format: svg
+embed-resources: true
+---
+
+## {.center}
+::: {.titlebox style="text-align:center; font-size: 1.25em;"}
+
+[Quarto: Reports and presentations]{.blue-title}
+
+
+[Megumi Oshima & Nicholas Ducharme-Barth]{.blue style="font-size:0.5em;"}  
+
+[January 2025]{.blue style="font-size:0.5em;"}
+:::
+
+## What is [Quarto](https://quarto.org/){preview-link="true"}?
+
+</br> 
+
+::: {.fragment .strike fragment-index=1}
+> "An open source technical publishing system for creating beautiful articles, websites, blogs, books, slides, and more."
+
+*--- In their own words...*
+:::
+
+</br>
+
+::: {.fragment .fade-in fragment-index=1}
+But really it is fancy [LaTeX](https://www.latex-project.org/about/){preview-link="true"} or expanded [R Markdown](https://rmarkdown.rstudio.com/){preview-link="true"} that can do so much more!
+:::
+
+## Output to multiple formats!
+
+::: columns
+
+::: {.column width=50%}
+
+::: {.codewindow .quarto}
+basic.qmd
+`````{.md}
+---
+title: "Basic document"
+format: html
+---
+
+## Quarto
+
+Make different documents by changing the format! 
+
+## Code
+
+Incorporate `code` into your work ...
+
+```{{r}}
+#| echo: true
+x = 1 + 1
+```
+... and report the computations later $x =$ `r x`.
+
+## Make plots
+
+Even insert figures:
+
+```{{r}}
+#| label: fig-scatterplot
+#| fig-cap: "City and highway mileage for 38 popular models of cars."
+#| echo: true
+library(ggplot2)
+
+ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  theme_minimal()
+```
+`````
+:::
+
+:::
+
+::: {.column width=50%}
+
+
+
+{{< html file="basic-html.html" full-screen-link="false" >}}
+
+:::
+
+:::
+
+## Output to multiple formats!
+
+::: columns
+
+::: {.column width=50%}
+
+::: {.codewindow .quarto}
+basic.qmd
+`````{.md}
+---
+title: "Basic document"
+format: pdf
+---
+
+## Quarto
+
+Make different documents by changing the format! 
+
+## Code
+
+Incorporate `code` into your work ...
+
+```{{r}}
+#| echo: true
+x = 1 + 1
+```
+... and report the computations later $x =$ `r x`.
+
+## Make plots
+
+Even insert figures:
+
+```{{r}}
+#| label: fig-scatterplot
+#| fig-cap: "City and highway mileage for 38 popular models of cars."
+#| echo: true
+library(ggplot2)
+
+ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  theme_minimal()
+```
+`````
+:::
+
+:::
+
+::: {.column width=50%}
+
+
+
+{{< pdf file="basic-pdf.pdf" download-link="false" >}}
+
+:::
+
+:::
+
+
+## Output to multiple formats!
+
+::: columns
+
+::: {.column width=50%}
+
+::: {.codewindow .quarto}
+basic.qmd
+`````{.md}
+---
+title: "Basic document"
+format: revealjs
+---
+
+## Quarto
+
+Make different documents by changing the format! 
+
+## Code
+
+Incorporate `code` into your work ...
+
+```{{r}}
+#| echo: true
+x = 1 + 1
+```
+... and report the computations later $x =$ `r x`.
+
+## Make plots
+
+Even insert figures:
+
+```{{r}}
+#| label: fig-scatterplot
+#| fig-cap: "City and highway mileage for 38 popular models of cars."
+#| echo: true
+library(ggplot2)
+
+ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  theme_minimal()
+```
+`````
+:::
+
+:::
+
+::: {.column width=50%}
+
+
+
+{{< revealjs file="basic-revealjs.html" class="ratio ratio-16x9" full-screen-link="false" >}}
+
+:::
+
+:::
+
+## Quarto basics
+
+</br>
+
+
+
+```{.md}
+---
+title: "Basic document"
+format: revealjs
+---
+```
