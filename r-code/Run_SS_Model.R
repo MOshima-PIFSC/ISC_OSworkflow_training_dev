@@ -6,7 +6,7 @@
 
 ## 1. Input needed information
 library(r4ss)
-library(ss3diags)
+## library(ss3diags)  ## don't load ss3diags until it is updated to by compatible with r4ss v1.51.0
 library(readxl)
 library(quarto)
 library(googlesheets4)
@@ -78,12 +78,13 @@ Build_All_SS(model.info=model.info,
              MAT_option = "Base",
              SR_option = "Base",
              EST_option = "Base",
+             SEL_option = "Base",
              initF = FALSE,
              includeCPUE = TRUE,
              superyear = FALSE,
              superyear_blocks = NULL,
              N_samp = 40,  ##what does this do
-             init_values = 1,  ## use initial values from ctr file 
+             init_values = 0,  ## use initial values from ctr file 
              parmtrace = 0,
              last_est_phs = 10,
              benchmarks = 1,

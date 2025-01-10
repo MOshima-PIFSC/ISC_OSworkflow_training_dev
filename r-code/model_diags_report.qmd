@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE,
 library(r4ss)
   if(!require(this.path)){install.packages("this.path")}
 library(this.path)
-library(ss3diags)
+#library(ss3diags)
 library(tidyverse)
   if(!require(gt)){install.packages("gt")}
 library(gt)
