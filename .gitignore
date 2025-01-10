@@ -26,6 +26,7 @@ working/ss3-example-calcs.r
 ss3.*
 *.ss_new
 /SS model/plots/*
+*.dcf
 
 #exceptions 
 !data.ss
