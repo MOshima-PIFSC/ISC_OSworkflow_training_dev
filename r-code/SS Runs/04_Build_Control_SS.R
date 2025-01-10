@@ -22,7 +22,6 @@ Build_Control <- function(species,
                           MAT_option = "Option1",
                           SR_option = "Option1",
                           EST_option = "Option1",
-                          SEL_option = "Option1",
                           size_selex_types = size_selex_types,
                           age_selex_types = age_selex_types,
                           initF = FALSE,
@@ -32,7 +31,7 @@ Build_Control <- function(species,
                           out_dir = out_dir,
                           model.info=model.info){
   
-  CTL        <-  SS_readctl_3.30(file = file.path(template_dir, model.info$templatefiles["control"]), 
+  CTL        <- r4ss::SS_readctl_3.30(file = file.path(template_dir, model.info$templatefiles["control"]), 
                                       datlist = file.path(template_dir, model.info$templatefiles["data"]))  
 
   
@@ -54,7 +53,7 @@ ctl.sps    <- ctl.inputs %>%
    }
    CTL$recr_dist_method   <- ctl.sps$recr_dist_method #main effects for GP, area, settle timing
    CTL$recr_dist_read     <- ctl.sps$recr_dist_read
-   CTL$recr_dist_pattern <- data.frame(Gpattern=ctl.sps$recr_pattern_Gpattern, month= ctl.sps$recr_pattern_month, area = ctl.sps$recr_pattern_area, age = ctl.sps$recr_pattern_age) #dataframe with column names: GPattern, month, area, age. Just need to adjust month if assuming settlement doesn't happen in January. If settlement happens after age 0 need to adjust that too.
+   CTL$recr_dist_pattern #dataframe with column names: GPattern, month, area, age. Just need to adjust month if assuming settlement doesn't happen in January. If settlement happens after age 0 need to adjust that too.
    CTL$N_Block_Designs    <- ctl.sps$N_Block_Designs #setting to zero for base model, can add blocks if needed for parameter values
    
    if(CTL$N_Block_Designs>=1) {
@@ -148,7 +147,7 @@ ctl.sps    <- ctl.inputs %>%
   if(Nsexes != 2){
     MG_parms <- MG_parms %>% filter(str_detect(rownames(.), "Male", negate = TRUE))
   }
-    CTL$MG_parms <- MG_parms[,c(1:14)]
+    CTL$MG_parms <- MG_parms
   
    CTL$MGparm_seas_effects <- unlist(select(ctl.sps, contains("Mgparm_seas")))
    ## Spawner-Recruitment
@@ -167,7 +166,7 @@ ctl.sps    <- ctl.inputs %>%
      bind_rows(CTL$SR_parms)
    
    CTL$do_recdev <- ctl.sps$do_recdev
-   if(CTL$do_recdev >= 1){
+   if(CTL$do_recdev == 1){
   
      CTL$MainRdevYrFirst            <- ctl.sps$MainRdevYrFirst
      CTL$MainRdevYrLast             <- ctl.sps$MainRdevYrLast
@@ -207,8 +206,6 @@ ctl.sps    <- ctl.inputs %>%
        rename("LABEL" = "X1") %>% 
        select(c(LO, HI, INIT, PRIOR, PR_SD, PR_type, PHASE, LABEL)) %>% 
        data.table::as.data.table()
-   } else {
-     CTL$init_F = NULL
    }
   
    
@@ -235,8 +232,7 @@ ctl.sps    <- ctl.inputs %>%
   
    ## Selectivity
    size.parms <- ctl.params %>% 
-     filter(str_detect(category, "SEL")) %>% 
-     filter(str_detect(OPTION, SEL_option)) %>% 
+     filter(str_detect(category, "EST")) %>% 
      filter(str_detect(X1, fixed("size", ignore_case = TRUE))) %>% 
      nrow()
    
@@ -245,10 +241,10 @@ ctl.sps    <- ctl.inputs %>%
      CTL$size_selex_types <- size_selex_types
   
      CTL$size_selex_parms <- ctl.params %>%
-       filter(str_detect(category, "SEL")) %>% 
+       filter(str_detect(category, "EST")) %>% 
        filter(str_detect(X1, fixed("SizeSel", ignore_case = TRUE))) %>%
        filter(!str_detect(X1, fixed("TV", ignore_case = TRUE))) %>%
-       filter(str_detect(OPTION, SEL_option)) %>%
+     #  filter(str_detect(OPTION, EST_option)) %>%
        #slice_head(n = 2) %>% 
        select(-c(category, OPTION, "X1")) %>% 
        as.data.frame()
@@ -287,7 +283,7 @@ ctl.sps    <- ctl.inputs %>%
    
    if (CTL$time_vary_auto_generation[5]==1){
           CTL$size_selex_parms_tv <- ctl.params %>%
-         filter(str_detect(category, SEL_option)) %>% 
+         filter(str_detect(category, "EST")) %>% 
          filter(str_detect(X1, fixed("SizeSel", ignore_case = TRUE))) %>%
          filter(str_detect(X1, fixed("TV", ignore_case = TRUE))) %>%
          select(-c(category, OPTION, "X1","env_var&link","dev_link","dev_minyr","dev_maxyr","dev_PH","Block","Block_Fxn")) %>% 
@@ -375,7 +371,7 @@ ctl.sps    <- ctl.inputs %>%
  #  --------------------------------------------------------------------------------------------------------------
  ## STEP 3. Save updated control file
   
-   SS_writectl_3.30(CTL, file.path(out_dir, model.info$ctl.file.name), overwrite = TRUE)
+  r4ss::SS_writectl_3.30(CTL, outfile = file.path(out_dir, model.info$ctl.file.name), overwrite = TRUE)
   
 }
   
