@@ -2,9 +2,13 @@
 title: "Day 1"
 ---
 
-Presentation slides for the GitHub basics presentation.
+Presentation slides for the GitHub for Collaborative Workflows presentation.
 
 {{< revealjs file="day-1-pres-github_basics.html" height="500px" class="ratio ratio-16x9" >}}
+
+Presentation slides for the Codespaces presentation.
+
+{{< revealjs file="day-1-codespaces.html" height="500px" class="ratio ratio-16x9" >}}
 
 Presentation slides for the presentation on modifying and running stock synthesis models.
 
