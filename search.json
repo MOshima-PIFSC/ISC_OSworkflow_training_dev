@@ -25,46 +25,62 @@
     "href": "assets/day-1-pres-codespaces.html#section",
     "title": "Open Science Workflow Training for ISC",
     "section": "",
-    "text": "Codespaces\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
+    "text": "Codespaces\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025",
+    "crumbs": [
+      "Day 1",
+      "Codespaces"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-codespaces.html#what-is-codespaces",
     "href": "assets/day-1-pres-codespaces.html#what-is-codespaces",
     "title": "Open Science Workflow Training for ISC",
     "section": "What is Codespaces?",
-    "text": "What is Codespaces?\n\n\nDevelopment environment that is hosted in the cloud on GitHub.com\n\n\n\n\n\nYou control the specs of the machine!\n\n\n\n\n\nConnected to your repository"
+    "text": "What is Codespaces?\n\n\nDevelopment environment that is hosted in the cloud on GitHub.com\n\n\n\n\n\nYou control the specs of the machine!\n\n\n\n\n\nConnected to your repository",
+    "crumbs": [
+      "Day 1",
+      "Codespaces"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-codespaces.html#why-use-it",
     "href": "assets/day-1-pres-codespaces.html#why-use-it",
     "title": "Open Science Workflow Training for ISC",
     "section": "Why use it?",
-    "text": "Why use it?\n\n\n\nContainerized environment\n\nAnyone using it is working in the same environment\n\nSame OS\n\nSame software\n\nSame package versions\n\n\n\n\n“It works on my computer!”"
+    "text": "Why use it?\n\n\n\nContainerized environment\n\nAnyone using it is working in the same environment\n\nSame OS\n\nSame software\n\nSame package versions\n\n\n\n\n“It works on my computer!”",
+    "crumbs": [
+      "Day 1",
+      "Codespaces"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-codespaces.html#set-up",
     "href": "assets/day-1-pres-codespaces.html#set-up",
     "title": "Open Science Workflow Training for ISC",
     "section": "Set Up",
-    "text": "Set Up\n\nTo set up a Codespace,\n\nCreate a .devcontainer folder inside your repository\n\nAdd a devcontainer.json file to that folder\n\nSet up devcontainer.json how you like (packages, software, extensions, etc.)\n\nAdd a setup.r file if needed\n\nOn main page of repository, “Code” -&gt; “Create codespace on main”"
+    "text": "Set Up\n\nTo set up a Codespace,\n\nCreate a .devcontainer folder inside your repository\n\nAdd a devcontainer.json file to that folder\n\nSet up devcontainer.json how you like (packages, software, extensions, etc.)\n\nAdd a setup.r file if needed\n\nOn main page of repository, “Code” -&gt; “Create codespace on main”",
+    "crumbs": [
+      "Day 1",
+      "Codespaces"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-codespaces.html#devcontainer-file",
     "href": "assets/day-1-pres-codespaces.html#devcontainer-file",
     "title": "Open Science Workflow Training for ISC",
     "section": "Devcontainer File",
-    "text": "Devcontainer File\n\ndevcontainer.json\n\n{\n    \"name\": \"Quarto Codespaces\",\n    \"image\": \"ghcr.io/mcanouil/quarto-codespaces:latest\", //pre-built image that includes quarto \n    \"remoteUser\": \"vscode\",\n    \"features\": { //options that you add in as needed\n        \"ghcr.io/rocker-org/devcontainer-features/r-apt:latest\": {},\n        \"ghcr.io/rocker-org/devcontainer-features/apt-packages:1\": {\n            \"packages\": \"libglpk-dev,libxml2-dev\" // needed for igraph\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1\": {\n            \"version\": \"1.6.37\", //specific version of quarto\n            \"installTinyTex\": \"false\", // TinyTex is already installed\n            \"installChromium\": \"false\" // needed for screen capture of htmlwidgets\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/r-rig:1\": {\n            \"version\": \"4.4.2\", // specific version of R\n            \"vscodeRSupport\": \"none\",\n            \"installDevTools\": \"false\",\n            \"installREnv\": \"true\", //install renv for later\n            \"installRMarkdown\": \"false\"\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/r-packages:1\": {\n            \"packages\": \"languageserver,jsonlite,rlang\", //r packages, can install packages from GitHub as well\n            \"installSystemRequirements\": true\n        }\n    },\n    \"customizations\": {\n        \"vscode\": { //setting up VSCode how we like it\n            \"extensions\": [\n                \"quarto.quarto\",\n                \"REditorSupport.r\",\n                \"GitHub.codespaces\",\n                \"mathematic.vscode-pdf\",\n                \"ms-vscode.live-server\",\n                \"mechatroner.rainbow-csv\"\n            ],\n            \"settings\": {\n                \"r.rterm.option\": [\n                    \"--no-save\",\n                    \"--no-restore-data\",\n                    \"--quiet\"\n                ],\n                \"r.useRenvLibPath\": true //use renv files to build container\n            }\n        }\n    },\n    \"forwardPorts\": [3000],   \n    // Use 'postCreateCommand' to run commands after the container is created.\n    //run an R script to call renv and restore the packages needed into the container\n    \"postCreateCommand\": \"Rscript .devcontainer/setup.r\"\n}"
+    "text": "Devcontainer File\n\ndevcontainer.json\n\n{\n    \"name\": \"Quarto Codespaces\",\n    \"image\": \"ghcr.io/mcanouil/quarto-codespaces:latest\", //pre-built image that includes quarto \n    \"remoteUser\": \"vscode\",\n    \"features\": { //options that you add in as needed\n        \"ghcr.io/rocker-org/devcontainer-features/r-apt:latest\": {},\n        \"ghcr.io/rocker-org/devcontainer-features/apt-packages:1\": {\n            \"packages\": \"libglpk-dev,libxml2-dev\" // needed for igraph\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1\": {\n            \"version\": \"1.6.37\", //specific version of quarto\n            \"installTinyTex\": \"false\", // TinyTex is already installed\n            \"installChromium\": \"false\" // needed for screen capture of htmlwidgets\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/r-rig:1\": {\n            \"version\": \"4.4.2\", // specific version of R\n            \"vscodeRSupport\": \"none\",\n            \"installDevTools\": \"false\",\n            \"installREnv\": \"true\", //install renv for later\n            \"installRMarkdown\": \"false\"\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/r-packages:1\": {\n            \"packages\": \"languageserver,jsonlite,rlang\", //r packages, can install packages from GitHub as well\n            \"installSystemRequirements\": true\n        }\n    },\n    \"customizations\": {\n        \"vscode\": { //setting up VSCode how we like it\n            \"extensions\": [\n                \"quarto.quarto\",\n                \"REditorSupport.r\",\n                \"GitHub.codespaces\",\n                \"mathematic.vscode-pdf\",\n                \"ms-vscode.live-server\",\n                \"mechatroner.rainbow-csv\"\n            ],\n            \"settings\": {\n                \"r.rterm.option\": [\n                    \"--no-save\",\n                    \"--no-restore-data\",\n                    \"--quiet\"\n                ],\n                \"r.useRenvLibPath\": true //use renv files to build container\n            }\n        }\n    },\n    \"forwardPorts\": [3000],   \n    // Use 'postCreateCommand' to run commands after the container is created.\n    //run an R script to call renv and restore the packages needed into the container\n    \"postCreateCommand\": \"Rscript .devcontainer/setup.r\"\n}",
+    "crumbs": [
+      "Day 1",
+      "Codespaces"
+    ]
   },
   {
     "objectID": "assets/day-2-build-shiny-app.html",
     "href": "assets/day-2-build-shiny-app.html",
     "title": "Building a Shiny app",
     "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "Day 2",
-      "Building a Shiny app"
-    ]
+    "text": "Back to top"
   },
   {
     "objectID": "assets/day-1-pres-github_basics.html#section",
@@ -236,7 +252,27 @@
     "href": "assets/day-1.html",
     "title": "Day 1",
     "section": "",
-    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
+    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen",
+    "crumbs": [
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "assets/day-1.html#presentation-files",
+    "href": "assets/day-1.html#presentation-files",
+    "title": "Day 1",
+    "section": "",
+    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen",
+    "crumbs": [
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "assets/day-1.html#resources",
+    "href": "assets/day-1.html#resources",
+    "title": "Day 1",
+    "section": "Resources",
+    "text": "Resources\nExample code for modifying a Stock Synthesis input model file and running the modified model through R using the r4ss package can be found in the r-code/ directory on the course GitHub repo.\nBriefly the r-code/01-modify-stock-synthesis.r file takes you through the steps of:\n\n\nreading in the Stock Synthesis input file (e.g., control.ss) using the r4ss package\nmodifying this file, in this case changing the steepness value \\(h\\) and thus modifying the shape of the stock-recruitment relationship (SRR)\nrunning the newly modified model\n\n\nThere is also code at the end of the file that wraps all three of those steps in a for loop in case multiple alternate model configurations want to be explored.",
     "crumbs": [
       "Day 1"
     ]
