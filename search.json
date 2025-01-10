@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "This repository contains materials for the ISC Open Science Workflows workshops held in Honolulu, HI and Yokohama, Japan in January 2025.\nThe schedule for the 4-day workshop is: (note this is flexible and will be updated at the end of each day)\n\nDay 1\n\n\n\nTime\nModule\n\n\n\n\n8:30-8:45\nWelcome and introductions\n\n\n8:45-9:30\nGitHub for Collaborative Workflows\n\n\n9:30-9:45\nCodespaces\n\n\n9:45-10:00\nBreak\n\n\n10:00-10:15\nReproducible Environments\n\n\n10:15-11:30\nModifying Stock Synthesis Files\n\n\n11:30-12:00\nGroup work, wrap up\n\n\n\n\n\nDay 2\n\n\n\nTime\nModule\n\n\n\n\n8:30-9:45\nGroup work\n\n\n9:45-10:00\nBreak\n\n\n10:00-10:30\nPull Requests and Code Review\n\n\n10:30-11:00\nShiny App\n\n\n11:00-12:00\nGroup work, wrap up\n\n\n\n\n\nDay 3\n\n\n\nTime\nModule\n\n\n\n\n8:30-9:30\nReview group work\n\n\n9:00-10:30\nQuarto Reports and Presentations\n\n\n10:30-11:00\nQuarto Website\n\n\n11:00-12:00\nGroup work, wrap up\n\n\n\n\n\nDay 4\n\n\n\nTime\nModule\n\n\n\n\n8:30-9:30\nReview group work\n\n\n9:30-12:00\nDiscussion, wrap up\n\n\n\n\n\n\n\n Back to top",
+    "text": "This repository contains materials for the ISC Open Science Workflows workshops held in Honolulu, HI and Yokohama, Japan in January 2025.\n    View slides in full screen\n       \n      \n    \n  \nThe schedule for the 4-day workshop is: (note this is flexible and will be updated at the end of each day)\n\nDay 1\n\n\n\nTime\nModule\n\n\n\n\n8:30-8:45\nWelcome and introductions\n\n\n8:45-9:30\nGitHub for Collaborative Workflows\n\n\n9:30-9:45\nCodespaces\n\n\n9:45-10:00\nBreak\n\n\n10:00-10:15\nReproducible Environments\n\n\n10:15-11:30\nModifying Stock Synthesis Files\n\n\n11:30-12:00\nGroup work, wrap up\n\n\n\n\n\nDay 2\n\n\n\nTime\nModule\n\n\n\n\n8:30-9:45\nGroup work\n\n\n9:45-10:00\nBreak\n\n\n10:00-10:30\nPull Requests and Code Review\n\n\n10:30-11:00\nShiny App\n\n\n11:00-12:00\nGroup work, wrap up\n\n\n\n\n\nDay 3\n\n\n\nTime\nModule\n\n\n\n\n8:30-9:30\nReview group work\n\n\n9:00-10:30\nQuarto Reports and Presentations\n\n\n10:30-11:00\nQuarto Website\n\n\n11:00-12:00\nGroup work, wrap up\n\n\n\n\n\nDay 4\n\n\n\nTime\nModule\n\n\n\n\n8:30-9:30\nReview group work\n\n\n9:30-12:00\nDiscussion, wrap up\n\n\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Home"
     ]
@@ -239,7 +239,7 @@
     "href": "assets/day-1.html",
     "title": "Day 1",
     "section": "",
-    "text": "Presentation slides for the GitHub basics presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
+    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
     "crumbs": [
       "Day 1"
     ]
