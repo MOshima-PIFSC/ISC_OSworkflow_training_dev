@@ -21,6 +21,7 @@
 Run_Diags <- function(model.info,
                       root_dir = NA,
                      file_dir = "base",
+                     r_code= "r-code",
                       do_retro = TRUE,
                       retro_years = 0:-5,
                       do_profile = TRUE,
@@ -45,8 +46,8 @@ Run_Diags <- function(model.info,
       message("Running retrospectives")
 ## this function uses a parallel retrospective function in development for R4ss. The code has been tested and pushed to the main branch of r4ss but hasn't been integrated yet. For now, a local version of the code is used. When the parallel process form retrospectives, jitter, and profiling are in the updated r4ss package, I will update this to use that function instead.
     if(run_parallel){
-    source(file.path(root_dir,"Rscripts","parallel_retro.R"))
-      source(file.path(root_dir,"Rscripts","parallel_SS_parlines.R"))
+    source(file.path(root_dir,r_code,"SS Runs","parallel_retro.R"))
+      source(file.path(root_dir,r_code,"SS Runs","parallel_SS_parlines.R"))
     ncores <- parallelly::availableCores() - 1
     future::plan(future::multisession, workers = ncores)
     retro(
@@ -116,8 +117,8 @@ Run_Diags <- function(model.info,
       profile.min<-profile.MLE-(profile.vec[1]/2)*(profile.vec[2])
       profile.max<-profile.MLE+(profile.vec[1]/2)*(profile.vec[2])
       if (run_parallel == TRUE){
-        source(file.path(root_dir,"Rscripts","parallel_profile.R"))
-        source(file.path(root_dir,"Rscripts","parallel_SS_parlines.R"))
+        source(file.path(root_dir,r_code,"SS Runs","parallel_profile.R"))
+        source(file.path(root_dir,r_code,"SS Runs","parallel_SS_parlines.R"))
         ncores <- parallelly::availableCores() - 1
         future::plan(future::multisession, workers = ncores)
         prof.table <- profile(
@@ -162,8 +163,8 @@ Run_Diags <- function(model.info,
                           verbose = TRUE)
      
      if (run_parallel==TRUE) {
-       source(file.path(root_dir,"Rscripts","parallel_jitter.R"))
-       source(file.path(root_dir,"Rscripts","parallel_SS_parlines.R"))
+       source(file.path(root_dir,r_code,"SS Runs","parallel_jitter.R"))
+       source(file.path(root_dir,r_code,"SS Runs","parallel_SS_parlines.R"))
        ncores <- parallelly::availableCores() - 1
        future::plan(future::multisession, workers = ncores)
        jit.likes <- jitter(

@@ -5,8 +5,8 @@
 
 
 ## 1. Input needed information
-suppressMessages(suppressWarnings(library(r4ss)))
-library(ss3diags, quietly=T, warn.conflicts = F)
+library(r4ss)
+library(ss3diags)
 library(readxl)
 library(quarto)
 library(googlesheets4)
@@ -28,7 +28,9 @@ fleetnames<-c("FISHERY",
 
 
 model.info<-list(
+  "Species"="EXM",
   "base.dir"=base.dir,
+  "scenario"="base",
   "startyear"=1971,
   "endyear"=2001,
   "nyr"=5,  ## indicates how many years you want to average the dynamic B0 over if applicable
@@ -47,12 +49,10 @@ model.info<-list(
   "Nfleets"=3,
   "Nsurvey"=2,
   "Nsexes" = 2,
-  "Species"="EXM",
   "fleets"=fleetnames,
   "catch.file"="InputCatch_Base.csv",
   "length.file"="InputLength_Base.csv",
   "CPUE.file"="InputCPUE_Base.csv",
-  "scenario"="base",
   "binwidth"=2,
   "bin.min"=10,
   "bin.max"=94,
@@ -96,10 +96,10 @@ Build_All_SS(model.info=model.info,
              Fcast_years = c(0,0,0,0,0,0),
              Fixed_forecatch=1,
              ControlRule = 0,
-             write_files = TRUE,
-             runmodels = TRUE,
+             write_files = FALSE,
+             runmodels = FALSE,
              ext_args = "",  ## -nohess to run without hessian
-             do_retro = FALSE,
+             do_retro = TRUE,
              retro_years = 0:-5,
              do_profile = FALSE,
              profile_name = "SR_LN(R0)",
@@ -108,10 +108,10 @@ Build_All_SS(model.info=model.info,
              Njitter = 10,
              jitterFraction = 0.1,
              do_ASPM = FALSE,
-             printreport = TRUE,
+             printreport = FALSE,
              r4ssplots = FALSE,
              readGoogle = FALSE,
-             run_parallel=TRUE,
+             run_parallel=FALSE,
              exe="ss3_win",
              r_code = "r-code", ## folder where your R scripts are stored
              run_folder = "stock-synthesis-models" ## folder you want your run models to be stored (default is SS3 runs)
