@@ -7,7 +7,7 @@ format:
 
 This repository contains materials for the ISC Open Science Workflows workshops held in Honolulu, HI and Yokohama, Japan in January 2025. 
 
-{{< revealjs file="day-1-welcom.html" height="500px" class="ratio ratio-16x9" >}}
+{{< revealjs file="assets/day-1-welcom.html" height="500px" class="ratio ratio-16x9" >}}
 
 The schedule for the 4-day workshop is: (note this is flexible and will be updated at the end of each day) 
 
