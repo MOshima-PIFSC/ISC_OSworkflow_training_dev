@@ -32,7 +32,7 @@ website:
           - text: "Reproducible environments"
             file: assets/day-1-reproducible_environments.qmd
           - text: "Modifying Stock Synthesis files"
-            file: assets/day-1-modify-stock-synthesis.qmd
+            file: assets/day-1-pres-modify-stock-synthesis.qmd
       - section: "Day 2"
         href: assets/day-2.html
         contents:
