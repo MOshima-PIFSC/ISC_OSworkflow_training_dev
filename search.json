@@ -21,14 +21,39 @@
     ]
   },
   {
-    "objectID": "assets/day-2.html",
-    "href": "assets/day-2.html",
-    "title": "Day 2",
+    "objectID": "assets/day-1-pres-codespaces.html#section",
+    "href": "assets/day-1-pres-codespaces.html#section",
+    "title": "Open Science Workflow Training for ISC",
     "section": "",
-    "text": "Presentation slides for building a Shiny app for our Stock Synthesis model runs.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
-    "crumbs": [
-      "Day 2"
-    ]
+    "text": "Codespaces\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
+  },
+  {
+    "objectID": "assets/day-1-pres-codespaces.html#what-is-codespaces",
+    "href": "assets/day-1-pres-codespaces.html#what-is-codespaces",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "What is Codespaces?",
+    "text": "What is Codespaces?\n\n\nDevelopment environment that is hosted in the cloud on GitHub.com\n\n\n\n\n\nYou control the specs of the machine!\n\n\n\n\n\nConnected to your repository"
+  },
+  {
+    "objectID": "assets/day-1-pres-codespaces.html#why-use-it",
+    "href": "assets/day-1-pres-codespaces.html#why-use-it",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Why use it?",
+    "text": "Why use it?\n\n\n\nContainerized environment\n\nAnyone using it is working in the same environment\n\nSame OS\n\nSame software\n\nSame package versions\n\n\n\n\n“It works on my computer!”"
+  },
+  {
+    "objectID": "assets/day-1-pres-codespaces.html#set-up",
+    "href": "assets/day-1-pres-codespaces.html#set-up",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Set Up",
+    "text": "Set Up\n\nTo set up a Codespace,\n\nCreate a .devcontainer folder inside your repository\n\nAdd a devcontainer.json file to that folder\n\nSet up devcontainer.json how you like (packages, software, extensions, etc.)\n\nAdd a setup.r file if needed\n\nOn main page of repository, “Code” -&gt; “Create codespace on main”"
+  },
+  {
+    "objectID": "assets/day-1-pres-codespaces.html#devcontainer-file",
+    "href": "assets/day-1-pres-codespaces.html#devcontainer-file",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Devcontainer File",
+    "text": "Devcontainer File\n\ndevcontainer.json\n\n{\n    \"name\": \"Quarto Codespaces\",\n    \"image\": \"ghcr.io/mcanouil/quarto-codespaces:latest\", //pre-built image that includes quarto \n    \"remoteUser\": \"vscode\",\n    \"features\": { //options that you add in as needed\n        \"ghcr.io/rocker-org/devcontainer-features/r-apt:latest\": {},\n        \"ghcr.io/rocker-org/devcontainer-features/apt-packages:1\": {\n            \"packages\": \"libglpk-dev,libxml2-dev\" // needed for igraph\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1\": {\n            \"version\": \"1.6.37\", //specific version of quarto\n            \"installTinyTex\": \"false\", // TinyTex is already installed\n            \"installChromium\": \"false\" // needed for screen capture of htmlwidgets\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/r-rig:1\": {\n            \"version\": \"4.4.2\", // specific version of R\n            \"vscodeRSupport\": \"none\",\n            \"installDevTools\": \"false\",\n            \"installREnv\": \"true\", //install renv for later\n            \"installRMarkdown\": \"false\"\n        },\n        \"ghcr.io/rocker-org/devcontainer-features/r-packages:1\": {\n            \"packages\": \"languageserver,jsonlite,rlang\", //r packages, can install packages from GitHub as well\n            \"installSystemRequirements\": true\n        }\n    },\n    \"customizations\": {\n        \"vscode\": { //setting up VSCode how we like it\n            \"extensions\": [\n                \"quarto.quarto\",\n                \"REditorSupport.r\",\n                \"GitHub.codespaces\",\n                \"mathematic.vscode-pdf\",\n                \"ms-vscode.live-server\",\n                \"mechatroner.rainbow-csv\"\n            ],\n            \"settings\": {\n                \"r.rterm.option\": [\n                    \"--no-save\",\n                    \"--no-restore-data\",\n                    \"--quiet\"\n                ],\n                \"r.useRenvLibPath\": true //use renv files to build container\n            }\n        }\n    },\n    \"forwardPorts\": [3000],   \n    // Use 'postCreateCommand' to run commands after the container is created.\n    //run an R script to call renv and restore the packages needed into the container\n    \"postCreateCommand\": \"Rscript .devcontainer/setup.r\"\n}"
   },
   {
     "objectID": "assets/day-2-build-shiny-app.html",
@@ -39,209 +64,6 @@
     "crumbs": [
       "Day 2",
       "Building a Shiny app"
-    ]
-  },
-  {
-    "objectID": "assets/day-1-modify-stock-synthesis.html",
-    "href": "assets/day-1-modify-stock-synthesis.html",
-    "title": "Modifying and running stock synthesis models",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "Day 1",
-      "Modifying Stock Synthesis files"
-    ]
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#section",
-    "href": "assets/day-2-pres-build-shiny.html#section",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "",
-    "text": "Building a Shiny app\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#what-is-shiny",
-    "href": "assets/day-2-pres-build-shiny.html#what-is-shiny",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "What is Shiny?",
-    "text": "What is Shiny?\n\nShiny is a package that can be used to build interactive web apps in either R or Python.\n\n\n\nLet’s look at an example!"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#why",
-    "href": "assets/day-2-pres-build-shiny.html#why",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Why?",
-    "text": "Why?\n\n\n\nInteractive dashboards can help with communicating science, and making it more accessible\nUseful for analysts to visualize data or model outputs\nFacilitates multi-model comparisons which can assist in model development and building intuition about the model."
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#how-to-build",
-    "href": "assets/day-2-pres-build-shiny.html#how-to-build",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "How to build?",
-    "text": "How to build?\n\nAll Shiny apps need three components:\n\n\na user interface (ui.R): this is the interactive part\na server (server.R): this is the computation/plotting engine\na call to shiny::shinyApp() (app.R): this ties everything together and launches the app\n\n\n\n\nLet’s look closer at each component."
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#user-interface",
-    "href": "assets/day-2-pres-build-shiny.html#user-interface",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "User interface",
-    "text": "User interface\n\nui.R\n\n\n\n\n\n\nApp appearance (GUI & plot window) controlled by ui.R, specifically pageWithSidebar().\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s focus on the GUI panel.\n\n\n\n\n\n\n\n\nvars &lt;- setdiff(names(iris), \"Species\")\n\npageWithSidebar(\n  headerPanel('Iris k-means clustering'),\n  sidebarPanel(\n    selectInput('xcol', 'X Variable', vars),\n    selectInput('ycol', 'Y Variable', vars, selected = vars[[2]]),\n    numericInput('clusters', 'Cluster count', 3, min = 1, max = 9)\n  ),\n  mainPanel(\n    plotOutput('plot1')\n  )\n)\n\n\n\n\n\nGUI defined by headerPanel() and sidebarPanel().\nPlot panel defined by plotOutput() within mainPanel()."
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#server",
-    "href": "assets/day-2-pres-build-shiny.html#server",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Server",
-    "text": "Server\n\nserver.R\n\n\n\n\nreactive() captures the inputs from the GUI.\nrenderPlot() produces the output.\n\n\n\nfunction(input, output) {\n\n  # Combine the selected variables into a new data frame\n  selectedData &lt;- reactive({\n    iris[, c(input$xcol, input$ycol)]\n  })\n\n  clusters &lt;- reactive({\n    kmeans(selectedData(), input$clusters)\n  })\n\n  output$plot1 &lt;- renderPlot({\n    palette(c(\"#E41A1C\", \"#377EB8\", \"#4DAF4A\", \"#984EA3\",\n      \"#FF7F00\", \"#FFFF33\", \"#A65628\", \"#F781BF\", \"#999999\"))\n\n    par(mar = c(5.1, 4.1, 0, 1))\n    plot(selectedData(),\n         col = clusters()$cluster,\n         pch = 20, cex = 3)\n    points(clusters()$centers, pch = 4, cex = 4, lwd = 4)\n  })\n\n}"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#running-the-app",
-    "href": "assets/day-2-pres-build-shiny.html#running-the-app",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Running the app",
-    "text": "Running the app\n\napp.R\n\n\nRunning the app is straightforward.\n\nPackage all code and data in the same directory, this will make publishing the app easier.\n\n\n# load packages\n  library(shiny)\n\n# source ui/server\n  source(\"./ui.R\")\n  source(\"./server.R\")\n\n# Run the app\n  app = shinyApp(ui=ui,server=server)\n  runApp(app)"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#publishing",
-    "href": "assets/day-2-pres-build-shiny.html#publishing",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Publishing",
-    "text": "Publishing\n\n\nOnce your app is built it can hosted online via shinyapps.io (individuals) or Posit Connect (enterprise users).\n\nIn both cases, publishing can be done in a couple steps using the rsconnect R package.\n\n\n\n\n\n\nConnect your account and add your server of choice (shinyapps.io/Posit Connect)\n\n\n\n\nDeploy your app rsconnect::deployApp(appDir = '&lt;project-dir&gt;')!"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#section-1",
-    "href": "assets/day-2-pres-build-shiny.html#section-1",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "",
-    "text": "Questions?\n\n\n\n\nLet’s go back to our Stock Synthesis example and build a Shiny app to explore how changing the steepness impacted recruitment estimates."
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#summarize-model-outputs",
-    "href": "assets/day-2-pres-build-shiny.html#summarize-model-outputs",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Summarize model outputs",
-    "text": "Summarize model outputs\n#_____________________________________________________________________________________________________________________________\n# load packages\nlibrary(data.table)\nlibrary(magrittr)\nlibrary(r4ss)\n\n#_____________________________________________________________________________________________________________________________\n# define paths\n    proj_dir = this.path::this.proj()\n    dir_model = paste0(proj_dir,\"/stock-synthesis-models/\")\n\n#_____________________________________________________________________________________________________________________________\n# get a vector of directories for models that have produced stock synthesis output\n    all_dirs = list.files(dir_model,recursive = TRUE)\n    # only keep model directories that contain a Report.sso file\n    all_dirs = all_dirs[grep(\"/Report.sso\",all_dirs,fixed=TRUE)]\n    all_dirs = gsub(\"Report.sso\",\"\",all_dirs,fixed=TRUE)\n\n#_____________________________________________________________________________________________________________________________\n# extract output from models\n  output = SSgetoutput(dirvec=paste0(dir_model,all_dirs))\n  names(output) = gsub(\"/\",\"\",all_dirs)\n\n  # since we ran models with different steepness values lets get the steepness value that corresponds to each model\n  model_steepness = sapply(output,function(x)x[[\"parameters\"]][\"SR_BH_steep\",\"Value\"])\n\n  # we want to build a shiny app that shows the stock recruit curve for each model so we will need to extract the corresponding data\n  # expected stock recruit relationship (srr)\n  expected_srr_dt.list = as.list(rep(NA,length(all_dirs)))\n  for(i in seq_along(expected_srr_dt.list)){\n    expected_srr_dt.list[[i]] = as.data.table(output[[i]]$SPAWN_RECR_CURVE) %&gt;%\n                       .[,model_name:=names(output[i])] %&gt;%\n                       .[,.(model_name,SSB,Recruitment)] %&gt;%\n                       setnames(.,c(\"SSB\",\"Recruitment\"),c(\"ssb\",\"rec_actual\"))\n  }\n  expected_srr_dt = rbindlist(expected_srr_dt.list)\n  fwrite(expected_srr_dt,file=paste0(proj_dir,\"shiny/shiny-data/expected_srr.csv\"))\n\n  # annual estimated recruitments and corresponding spawning biomass\n  est_recruit_dt.list = as.list(rep(NA,length(all_dirs)))\n  for(i in seq_along(est_recruit_dt.list)){\n    est_recruit_dt.list[[i]] = as.data.table(output[[i]]$recruit) %&gt;%\n                       .[,model_name:=names(output[i])] %&gt;%\n                       .[era==\"Main\"] %&gt;%\n                       .[,.(model_name,Yr,SpawnBio,pred_recr)] %&gt;%\n                       setnames(.,c(\"Yr\",\"SpawnBio\",\"pred_recr\"),c(\"yr\",\"ssb\",\"rec_estimated\"))\n  }\n  est_recruit_dt = rbindlist(est_recruit_dt.list)\n  fwrite(est_recruit_dt,file=paste0(proj_dir,\"shiny/shiny-data/est_recruit.csv\"))\n  \n#_____________________________________________________________________________________________________________________________\n# make summary files to run the shiny app from\n  summary_dt = data.table(model_name=names(output),steepness=model_steepness)\n  fwrite(summary_dt,file=paste0(proj_dir,\"shiny/shiny-data/summary.csv\"))"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#user-interface-1",
-    "href": "assets/day-2-pres-build-shiny.html#user-interface-1",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "User interface",
-    "text": "User interface\n\nui.R\n\nlibrary(shinydashboard)\nlibrary(shinyWidgets)\n\ncss &lt;- htmltools::HTML(\n    \"#summarytable &gt; .dataTables_wrapper.no-footer &gt; .dataTables_scroll &gt; .dataTables_scrollBody {\n        transform:rotateX(180deg);\n    }\n    #summarytable &gt; .dataTables_wrapper.no-footer &gt; .dataTables_scroll &gt; .dataTables_scrollBody table{\n        transform:rotateX(180deg);\n    }\"\n)\n\nui = shinydashboard::dashboardPage(\n  header = shinydashboard::dashboardHeader(title=\"Shiny demo\"),\n  sidebar = shinydashboard::dashboardSidebar(\n    br(),\n    br(),\n    sidebarMenu(id=\"sidebarmenu\",\n      menuItem(\"Introduction\", tabName=\"introduction\"),\n      menuItem(\"Summary table\", tabName=\"table\"),\n      menuItem(\"Stock-recruit relationship (SRR)\", tabName=\"srr_plots\")\n    ),\n\n    # Only show these on the plotting tabs - not Introduction and Summary table tabs\n    conditionalPanel(condition=\"input.sidebarmenu == 'srr_plots'\",\n      # srr-show-est\n      switchInput(\n      inputId = \"srr_show_est\",  \n      label = \"Show estimated recruitment\",\n      value=TRUE,\n      onLabel = \"TRUE\",\n      offLabel = \"FALSE\",\n      onStatus = \"success\", \n      offStatus = \"danger\"),\n      # srr-est-type\n      awesomeRadio(\n      inputId = \"srr_est_type\",  \n      label = \"Plot estimated recruitment as:\",\n      choices=c(\"Path\",\"Points\",\"Both\"),\n      selected = \"Path\")\n    ),\n    br(),\n    br(),\n    tags$footer(\n      div(style=\"text-align:center\",\n        tags$p(\"version 0.0.1\"),\n        tags$p(paste(\"Copyright\", format(Sys.time(),\"%Y\"), \"NOAA Fisheries, PIFSC Stock Assessment Group\"))\n      )\n    )\n  ), # End of sidebar\n\n  body = shinydashboard::dashboardBody(\n    tags$head(tags$style(HTML('.wrapper {height: auto !important; position:relative; overflow-x:hidden; overflow-y:hidden}') )),\n    tags$head(tags$style(css)),\n    # Start of main tab stuff\n    tabItems(\n      # **** Introduction ****\n      tabItem(tabName=\"introduction\", h2(\"Introduction\"),\n        fluidRow(column(12, includeMarkdown(\"./introduction_index.md\")))\n      ), # End of introduction tab\n\n      # **** Summary table ****\n      tabItem(tabName=\"table\", h2(\"Summary table\"),\n        fluidRow(box(title=\"Model metrics\", collapsed=FALSE, solidHeader=TRUE, collapsible=TRUE, status=\"primary\", width=12,\n         DT::dataTableOutput(\"summarytable\")))\n      ), # End of table tab\n\n      # **** Stock recruitment plots ****\n      tabItem(tabName=\"srr_plots\", h2(\"Stock-recruitment plots\"),\n        fluidRow(\n          box(title=\"Stock-recruitment relationship (SRR)\", solidHeader=TRUE, collapsible=TRUE, collapsed=FALSE, status=\"primary\", width=12,\n            p(\"Select at least one model.\"),\n            plotOutput(\"srr_plots\", height=\"auto\"))\n        )\n      ) # End of srr_plots tab\n    ) # End of tabItems\n  ) # End of dashboardBody\n)"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#server-1",
-    "href": "assets/day-2-pres-build-shiny.html#server-1",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Server",
-    "text": "Server\n\nserver.R\n\nlibrary(data.table)\nlibrary(magrittr)\nlibrary(ggplot2)\nlibrary(viridis)\n\nserver = function(input, output){\n  # pixel height for each panel. i.e row height when plotting by species\n  height_per_panel = 350\n\n  # load data needed for shiny app\n    summary_dt = fread(file=\"./shiny-data/summary.csv\")\n\n  ref_table_reduced = summary_dt %&gt;%\n                as.data.frame(.)\n\n  output$summarytable = DT::renderDataTable({\n    summary_df = summary_dt %&gt;%\n                 as.data.frame(.,stringsAsFactors=FALSE)\n    summary_DT = DT::datatable(summary_df, filter = 'top',rownames=FALSE,\n    options = list(scrollX = TRUE, search = list(regex = TRUE, caseInsensitive = FALSE),pageLength = 25))\n    return(summary_DT)\n  })\n  outputOptions(output, \"summarytable\", suspendWhenHidden = FALSE)\n\n  filtered_id = reactive({\n    req(input$summarytable_rows_selected)\n    keep_models = c(ref_table_reduced[input$summarytable_rows_selected, ]$model_name)\n    return(keep_models)  \n  })\n\n  # define plots\n  output$srr_plots = renderPlot({\n    input_models = unique(filtered_id())\n    if(length(input_models) &lt; 1 ){\n      return(warning(\"Please select at least one model.\"))\n    }\n\n    expected_srr_dt = fread(file=\"./shiny-data/expected_srr.csv\") %&gt;%\n                      .[model_name %in% input_models]\n    est_recruit_dt = fread(file=\"./shiny-data/est_recruit.csv\") %&gt;%\n                      .[model_name %in% input_models]\n\n    p = expected_srr_dt %&gt;%\n      ggplot() +\n            ylim(0,NA) +\n            xlab(\"Spawning biomass (SSB)\") +\n            ylab(\"Recruitment\") +\n            geom_path(aes(x=ssb,y=rec_actual,group=model_name,color=model_name),linewidth=1.5)\n\n      if(input$srr_show_est == \"TRUE\")\n      {\n        if(input$srr_est_type == \"Path\"){\n            p = p + geom_line(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,color=model_name),alpha=0.5)\n        } else if(input$srr_est_type == \"Points\"){\n            p = p + geom_point(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,fill=model_name),shape=21,cex=3)\n        } else {\n            p = p + geom_line(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,color=model_name),alpha=0.5)\n            p = p + geom_point(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,fill=model_name),shape=21,cex=3)\n        }\n      }\n      \n    \n      p = p + viridis::scale_color_viridis(\"Model\",begin = 0.1,end = 0.8,direction = 1,option = \"H\",discrete=TRUE) +\n            viridis::scale_fill_viridis(\"Model\",begin = 0.1,end = 0.8,direction = 1,option = \"H\",discrete=TRUE) +\n            theme(panel.background = element_rect(fill = \"white\", color = \"black\", linetype = \"solid\"),\n                            panel.grid.major = element_line(color = 'gray70',linetype = \"dotted\"), \n                            panel.grid.minor = element_line(color = 'gray70',linetype = \"dotted\"),\n                            strip.background =element_rect(fill=\"white\"),\n                            legend.key = element_rect(fill = \"white\"))\n            \n    return(p)\n  },\n  height=function(){\n    return((height_per_panel*1.5))\n  })\n}"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#section-2",
-    "href": "assets/day-2-pres-build-shiny.html#section-2",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "",
-    "text": "Let’s check out the app!"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#group-activity",
-    "href": "assets/day-2-pres-build-shiny.html#group-activity",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Group activity!",
-    "text": "Group activity!\n\nUsing the Stock Synthesis model runs from the previous activity and building off of the Shiny code provided in the GitHub repo:\n\n\nsummarize the model runs according to the feature that your group added (e.g., if you modified growth extract the length at age from each model).\nadd a new tab to the existing Shiny app that plots the data you summarized (e.g., plot length at age for all models)"
-  },
-  {
-    "objectID": "assets/day-2-pres-build-shiny.html#resources",
-    "href": "assets/day-2-pres-build-shiny.html#resources",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Resources",
-    "text": "Resources\n\n\nShiny widgets"
-  },
-  {
-    "objectID": "assets/web-about-mo.html",
-    "href": "assets/web-about-mo.html",
-    "title": "Megumi Oshima",
-    "section": "",
-    "text": "Megumi Oshima has been working at the Pacific Islands Fisheries Science Center since 2021. She works mostly on domestic and territorial bottomfish stocks and is interested in Openscience and creating reproducible and transparent workflows. Before joining PIFSC, she was a graduate student at University of Southern Mississippi where she got her PhD in Coastal Sciences.\n\n\n Back to top",
-    "crumbs": [
-      "Contact us",
-      "Megumi Oshima"
-    ]
-  },
-  {
-    "objectID": "assets/day-1-codespaces.html#section",
-    "href": "assets/day-1-codespaces.html#section",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "",
-    "text": "Codespaces\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025",
-    "crumbs": [
-      "Day 1",
-      "Codespaces"
-    ]
-  },
-  {
-    "objectID": "assets/day-1-codespaces.html#what-is-codespaces",
-    "href": "assets/day-1-codespaces.html#what-is-codespaces",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "What is Codespaces?",
-    "text": "What is Codespaces?\n\n\nDevelopment environment that is hosted in the cloud on GitHub.com\n\n\n\n\n\nYou control the specs of the machine!\n\n\n\n\n\nConnected to your repository",
-    "crumbs": [
-      "Day 1",
-      "Codespaces"
-    ]
-  },
-  {
-    "objectID": "assets/day-1-codespaces.html#why-use-it",
-    "href": "assets/day-1-codespaces.html#why-use-it",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Why use it?",
-    "text": "Why use it?\n\n\n\nContainerized environment\n\nAnyone using it is working in the same environment\n\nSame OS\n\nSame software\n\nSame package versions\n\n\n\n\n“It works on my computer!”",
-    "crumbs": [
-      "Day 1",
-      "Codespaces"
-    ]
-  },
-  {
-    "objectID": "assets/day-1-codespaces.html#set-up",
-    "href": "assets/day-1-codespaces.html#set-up",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Set Up",
-    "text": "Set Up\n\nTo set up a Codespace,\n\nCreate a .devcontainer folder inside your repository\n\nAdd a devcontainer.json file to that folder\n\nSet up devcontainer.json how you like (packages, software, extensions, etc.)\n\nAdd a setup.r file if needed\n\nOn main page of repository, “Code” -&gt; “Create codespace on main”",
-    "crumbs": [
-      "Day 1",
-      "Codespaces"
-    ]
-  },
-  {
-    "objectID": "assets/web-about-nd.html",
-    "href": "assets/web-about-nd.html",
-    "title": "Nicholas Ducharme-Barth",
-    "section": "",
-    "text": "Nicholas Ducharme-Barth joined the Pacific Islands Fisheries Science Center in 2021. Previously, Nicholas worked at the Pacific Community (SPC) conducting pelagic stock assessments for the Western and Central Pacific Fisheries Commission (WCPFC). He received his B.S. in Mathematics from the College of William & Mary and his Ph. D. in Fisheries and Aquatic Sciences from the University of Florida.\n\n\n Back to top",
-    "crumbs": [
-      "Contact us",
-      "Nicholas Ducharme-Barth"
-    ]
-  },
-  {
-    "objectID": "assets/day-1-reproducible_environments.html",
-    "href": "assets/day-1-reproducible_environments.html",
-    "title": "Reproducible environments",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "Day 1",
-      "Reproducible environments"
-    ]
-  },
-  {
-    "objectID": "assets/day-1.html",
-    "href": "assets/day-1.html",
-    "title": "Day 1",
-    "section": "",
-    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
-    "crumbs": [
-      "Day 1"
     ]
   },
   {
@@ -410,6 +232,193 @@
     ]
   },
   {
+    "objectID": "assets/day-1.html",
+    "href": "assets/day-1.html",
+    "title": "Day 1",
+    "section": "",
+    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
+    "crumbs": [
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "assets/day-1-reproducible_environments.html",
+    "href": "assets/day-1-reproducible_environments.html",
+    "title": "Reproducible environments",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
+  },
+  {
+    "objectID": "assets/web-about-nd.html",
+    "href": "assets/web-about-nd.html",
+    "title": "Nicholas Ducharme-Barth",
+    "section": "",
+    "text": "Nicholas Ducharme-Barth joined the Pacific Islands Fisheries Science Center in 2021. Previously, Nicholas worked at the Pacific Community (SPC) conducting pelagic stock assessments for the Western and Central Pacific Fisheries Commission (WCPFC). He received his B.S. in Mathematics from the College of William & Mary and his Ph. D. in Fisheries and Aquatic Sciences from the University of Florida.\n\n\n Back to top",
+    "crumbs": [
+      "Contact us",
+      "Nicholas Ducharme-Barth"
+    ]
+  },
+  {
+    "objectID": "assets/web-about-mo.html",
+    "href": "assets/web-about-mo.html",
+    "title": "Megumi Oshima",
+    "section": "",
+    "text": "Megumi Oshima has been working at the Pacific Islands Fisheries Science Center since 2021. She works mostly on domestic and territorial bottomfish stocks and is interested in Openscience and creating reproducible and transparent workflows. Before joining PIFSC, she was a graduate student at University of Southern Mississippi where she got her PhD in Coastal Sciences.\n\n\n Back to top",
+    "crumbs": [
+      "Contact us",
+      "Megumi Oshima"
+    ]
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#section",
+    "href": "assets/day-2-pres-build-shiny.html#section",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "",
+    "text": "Building a Shiny app\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#what-is-shiny",
+    "href": "assets/day-2-pres-build-shiny.html#what-is-shiny",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "What is Shiny?",
+    "text": "What is Shiny?\n\nShiny is a package that can be used to build interactive web apps in either R or Python.\n\n\n\nLet’s look at an example!"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#why",
+    "href": "assets/day-2-pres-build-shiny.html#why",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Why?",
+    "text": "Why?\n\n\n\nInteractive dashboards can help with communicating science, and making it more accessible\nUseful for analysts to visualize data or model outputs\nFacilitates multi-model comparisons which can assist in model development and building intuition about the model."
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#how-to-build",
+    "href": "assets/day-2-pres-build-shiny.html#how-to-build",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "How to build?",
+    "text": "How to build?\n\nAll Shiny apps need three components:\n\n\na user interface (ui.R): this is the interactive part\na server (server.R): this is the computation/plotting engine\na call to shiny::shinyApp() (app.R): this ties everything together and launches the app\n\n\n\n\nLet’s look closer at each component."
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#user-interface",
+    "href": "assets/day-2-pres-build-shiny.html#user-interface",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "User interface",
+    "text": "User interface\n\nui.R\n\n\n\n\n\n\nApp appearance (GUI & plot window) controlled by ui.R, specifically pageWithSidebar().\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s focus on the GUI panel.\n\n\n\n\n\n\n\n\nvars &lt;- setdiff(names(iris), \"Species\")\n\npageWithSidebar(\n  headerPanel('Iris k-means clustering'),\n  sidebarPanel(\n    selectInput('xcol', 'X Variable', vars),\n    selectInput('ycol', 'Y Variable', vars, selected = vars[[2]]),\n    numericInput('clusters', 'Cluster count', 3, min = 1, max = 9)\n  ),\n  mainPanel(\n    plotOutput('plot1')\n  )\n)\n\n\n\n\n\nGUI defined by headerPanel() and sidebarPanel().\nPlot panel defined by plotOutput() within mainPanel()."
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#server",
+    "href": "assets/day-2-pres-build-shiny.html#server",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Server",
+    "text": "Server\n\nserver.R\n\n\n\n\nreactive() captures the inputs from the GUI.\nrenderPlot() produces the output.\n\n\n\nfunction(input, output) {\n\n  # Combine the selected variables into a new data frame\n  selectedData &lt;- reactive({\n    iris[, c(input$xcol, input$ycol)]\n  })\n\n  clusters &lt;- reactive({\n    kmeans(selectedData(), input$clusters)\n  })\n\n  output$plot1 &lt;- renderPlot({\n    palette(c(\"#E41A1C\", \"#377EB8\", \"#4DAF4A\", \"#984EA3\",\n      \"#FF7F00\", \"#FFFF33\", \"#A65628\", \"#F781BF\", \"#999999\"))\n\n    par(mar = c(5.1, 4.1, 0, 1))\n    plot(selectedData(),\n         col = clusters()$cluster,\n         pch = 20, cex = 3)\n    points(clusters()$centers, pch = 4, cex = 4, lwd = 4)\n  })\n\n}"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#running-the-app",
+    "href": "assets/day-2-pres-build-shiny.html#running-the-app",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Running the app",
+    "text": "Running the app\n\napp.R\n\n\nRunning the app is straightforward.\n\nPackage all code and data in the same directory, this will make publishing the app easier.\n\n\n# load packages\n  library(shiny)\n\n# source ui/server\n  source(\"./ui.R\")\n  source(\"./server.R\")\n\n# Run the app\n  app = shinyApp(ui=ui,server=server)\n  runApp(app)"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#publishing",
+    "href": "assets/day-2-pres-build-shiny.html#publishing",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Publishing",
+    "text": "Publishing\n\n\nOnce your app is built it can hosted online via shinyapps.io (individuals) or Posit Connect (enterprise users).\n\nIn both cases, publishing can be done in a couple steps using the rsconnect R package.\n\n\n\n\n\n\nConnect your account and add your server of choice (shinyapps.io/Posit Connect)\n\n\n\n\nDeploy your app rsconnect::deployApp(appDir = '&lt;project-dir&gt;')!"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#section-1",
+    "href": "assets/day-2-pres-build-shiny.html#section-1",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "",
+    "text": "Questions?\n\n\n\n\nLet’s go back to our Stock Synthesis example and build a Shiny app to explore how changing the steepness impacted recruitment estimates."
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#summarize-model-outputs",
+    "href": "assets/day-2-pres-build-shiny.html#summarize-model-outputs",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Summarize model outputs",
+    "text": "Summarize model outputs\n#_____________________________________________________________________________________________________________________________\n# load packages\nlibrary(data.table)\nlibrary(magrittr)\nlibrary(r4ss)\n\n#_____________________________________________________________________________________________________________________________\n# define paths\n    proj_dir = this.path::this.proj()\n    dir_model = paste0(proj_dir,\"/stock-synthesis-models/\")\n\n#_____________________________________________________________________________________________________________________________\n# get a vector of directories for models that have produced stock synthesis output\n    all_dirs = list.files(dir_model,recursive = TRUE)\n    # only keep model directories that contain a Report.sso file\n    all_dirs = all_dirs[grep(\"/Report.sso\",all_dirs,fixed=TRUE)]\n    all_dirs = gsub(\"Report.sso\",\"\",all_dirs,fixed=TRUE)\n\n#_____________________________________________________________________________________________________________________________\n# extract output from models\n  output = SSgetoutput(dirvec=paste0(dir_model,all_dirs))\n  names(output) = gsub(\"/\",\"\",all_dirs)\n\n  # since we ran models with different steepness values lets get the steepness value that corresponds to each model\n  model_steepness = sapply(output,function(x)x[[\"parameters\"]][\"SR_BH_steep\",\"Value\"])\n\n  # we want to build a shiny app that shows the stock recruit curve for each model so we will need to extract the corresponding data\n  # expected stock recruit relationship (srr)\n  expected_srr_dt.list = as.list(rep(NA,length(all_dirs)))\n  for(i in seq_along(expected_srr_dt.list)){\n    expected_srr_dt.list[[i]] = as.data.table(output[[i]]$SPAWN_RECR_CURVE) %&gt;%\n                       .[,model_name:=names(output[i])] %&gt;%\n                       .[,.(model_name,SSB,Recruitment)] %&gt;%\n                       setnames(.,c(\"SSB\",\"Recruitment\"),c(\"ssb\",\"rec_actual\"))\n  }\n  expected_srr_dt = rbindlist(expected_srr_dt.list)\n  fwrite(expected_srr_dt,file=paste0(proj_dir,\"shiny/shiny-data/expected_srr.csv\"))\n\n  # annual estimated recruitments and corresponding spawning biomass\n  est_recruit_dt.list = as.list(rep(NA,length(all_dirs)))\n  for(i in seq_along(est_recruit_dt.list)){\n    est_recruit_dt.list[[i]] = as.data.table(output[[i]]$recruit) %&gt;%\n                       .[,model_name:=names(output[i])] %&gt;%\n                       .[era==\"Main\"] %&gt;%\n                       .[,.(model_name,Yr,SpawnBio,pred_recr)] %&gt;%\n                       setnames(.,c(\"Yr\",\"SpawnBio\",\"pred_recr\"),c(\"yr\",\"ssb\",\"rec_estimated\"))\n  }\n  est_recruit_dt = rbindlist(est_recruit_dt.list)\n  fwrite(est_recruit_dt,file=paste0(proj_dir,\"shiny/shiny-data/est_recruit.csv\"))\n  \n#_____________________________________________________________________________________________________________________________\n# make summary files to run the shiny app from\n  summary_dt = data.table(model_name=names(output),steepness=model_steepness)\n  fwrite(summary_dt,file=paste0(proj_dir,\"shiny/shiny-data/summary.csv\"))"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#user-interface-1",
+    "href": "assets/day-2-pres-build-shiny.html#user-interface-1",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "User interface",
+    "text": "User interface\n\nui.R\n\nlibrary(shinydashboard)\nlibrary(shinyWidgets)\n\ncss &lt;- htmltools::HTML(\n    \"#summarytable &gt; .dataTables_wrapper.no-footer &gt; .dataTables_scroll &gt; .dataTables_scrollBody {\n        transform:rotateX(180deg);\n    }\n    #summarytable &gt; .dataTables_wrapper.no-footer &gt; .dataTables_scroll &gt; .dataTables_scrollBody table{\n        transform:rotateX(180deg);\n    }\"\n)\n\nui = shinydashboard::dashboardPage(\n  header = shinydashboard::dashboardHeader(title=\"Shiny demo\"),\n  sidebar = shinydashboard::dashboardSidebar(\n    br(),\n    br(),\n    sidebarMenu(id=\"sidebarmenu\",\n      menuItem(\"Introduction\", tabName=\"introduction\"),\n      menuItem(\"Summary table\", tabName=\"table\"),\n      menuItem(\"Stock-recruit relationship (SRR)\", tabName=\"srr_plots\")\n    ),\n\n    # Only show these on the plotting tabs - not Introduction and Summary table tabs\n    conditionalPanel(condition=\"input.sidebarmenu == 'srr_plots'\",\n      # srr-show-est\n      switchInput(\n      inputId = \"srr_show_est\",  \n      label = \"Show estimated recruitment\",\n      value=TRUE,\n      onLabel = \"TRUE\",\n      offLabel = \"FALSE\",\n      onStatus = \"success\", \n      offStatus = \"danger\"),\n      # srr-est-type\n      awesomeRadio(\n      inputId = \"srr_est_type\",  \n      label = \"Plot estimated recruitment as:\",\n      choices=c(\"Path\",\"Points\",\"Both\"),\n      selected = \"Path\")\n    ),\n    br(),\n    br(),\n    tags$footer(\n      div(style=\"text-align:center\",\n        tags$p(\"version 0.0.1\"),\n        tags$p(paste(\"Copyright\", format(Sys.time(),\"%Y\"), \"NOAA Fisheries, PIFSC Stock Assessment Group\"))\n      )\n    )\n  ), # End of sidebar\n\n  body = shinydashboard::dashboardBody(\n    tags$head(tags$style(HTML('.wrapper {height: auto !important; position:relative; overflow-x:hidden; overflow-y:hidden}') )),\n    tags$head(tags$style(css)),\n    # Start of main tab stuff\n    tabItems(\n      # **** Introduction ****\n      tabItem(tabName=\"introduction\", h2(\"Introduction\"),\n        fluidRow(column(12, includeMarkdown(\"./introduction_index.md\")))\n      ), # End of introduction tab\n\n      # **** Summary table ****\n      tabItem(tabName=\"table\", h2(\"Summary table\"),\n        fluidRow(box(title=\"Model metrics\", collapsed=FALSE, solidHeader=TRUE, collapsible=TRUE, status=\"primary\", width=12,\n         DT::dataTableOutput(\"summarytable\")))\n      ), # End of table tab\n\n      # **** Stock recruitment plots ****\n      tabItem(tabName=\"srr_plots\", h2(\"Stock-recruitment plots\"),\n        fluidRow(\n          box(title=\"Stock-recruitment relationship (SRR)\", solidHeader=TRUE, collapsible=TRUE, collapsed=FALSE, status=\"primary\", width=12,\n            p(\"Select at least one model.\"),\n            plotOutput(\"srr_plots\", height=\"auto\"))\n        )\n      ) # End of srr_plots tab\n    ) # End of tabItems\n  ) # End of dashboardBody\n)"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#server-1",
+    "href": "assets/day-2-pres-build-shiny.html#server-1",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Server",
+    "text": "Server\n\nserver.R\n\nlibrary(data.table)\nlibrary(magrittr)\nlibrary(ggplot2)\nlibrary(viridis)\n\nserver = function(input, output){\n  # pixel height for each panel. i.e row height when plotting by species\n  height_per_panel = 350\n\n  # load data needed for shiny app\n    summary_dt = fread(file=\"./shiny-data/summary.csv\")\n\n  ref_table_reduced = summary_dt %&gt;%\n                as.data.frame(.)\n\n  output$summarytable = DT::renderDataTable({\n    summary_df = summary_dt %&gt;%\n                 as.data.frame(.,stringsAsFactors=FALSE)\n    summary_DT = DT::datatable(summary_df, filter = 'top',rownames=FALSE,\n    options = list(scrollX = TRUE, search = list(regex = TRUE, caseInsensitive = FALSE),pageLength = 25))\n    return(summary_DT)\n  })\n  outputOptions(output, \"summarytable\", suspendWhenHidden = FALSE)\n\n  filtered_id = reactive({\n    req(input$summarytable_rows_selected)\n    keep_models = c(ref_table_reduced[input$summarytable_rows_selected, ]$model_name)\n    return(keep_models)  \n  })\n\n  # define plots\n  output$srr_plots = renderPlot({\n    input_models = unique(filtered_id())\n    if(length(input_models) &lt; 1 ){\n      return(warning(\"Please select at least one model.\"))\n    }\n\n    expected_srr_dt = fread(file=\"./shiny-data/expected_srr.csv\") %&gt;%\n                      .[model_name %in% input_models]\n    est_recruit_dt = fread(file=\"./shiny-data/est_recruit.csv\") %&gt;%\n                      .[model_name %in% input_models]\n\n    p = expected_srr_dt %&gt;%\n      ggplot() +\n            ylim(0,NA) +\n            xlab(\"Spawning biomass (SSB)\") +\n            ylab(\"Recruitment\") +\n            geom_path(aes(x=ssb,y=rec_actual,group=model_name,color=model_name),linewidth=1.5)\n\n      if(input$srr_show_est == \"TRUE\")\n      {\n        if(input$srr_est_type == \"Path\"){\n            p = p + geom_line(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,color=model_name),alpha=0.5)\n        } else if(input$srr_est_type == \"Points\"){\n            p = p + geom_point(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,fill=model_name),shape=21,cex=3)\n        } else {\n            p = p + geom_line(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,color=model_name),alpha=0.5)\n            p = p + geom_point(data=est_recruit_dt,aes(x=ssb,y=rec_estimated,group=model_name,fill=model_name),shape=21,cex=3)\n        }\n      }\n      \n    \n      p = p + viridis::scale_color_viridis(\"Model\",begin = 0.1,end = 0.8,direction = 1,option = \"H\",discrete=TRUE) +\n            viridis::scale_fill_viridis(\"Model\",begin = 0.1,end = 0.8,direction = 1,option = \"H\",discrete=TRUE) +\n            theme(panel.background = element_rect(fill = \"white\", color = \"black\", linetype = \"solid\"),\n                            panel.grid.major = element_line(color = 'gray70',linetype = \"dotted\"), \n                            panel.grid.minor = element_line(color = 'gray70',linetype = \"dotted\"),\n                            strip.background =element_rect(fill=\"white\"),\n                            legend.key = element_rect(fill = \"white\"))\n            \n    return(p)\n  },\n  height=function(){\n    return((height_per_panel*1.5))\n  })\n}"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#section-2",
+    "href": "assets/day-2-pres-build-shiny.html#section-2",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "",
+    "text": "Let’s check out the app!"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#group-activity",
+    "href": "assets/day-2-pres-build-shiny.html#group-activity",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Group activity!",
+    "text": "Group activity!\n\nUsing the Stock Synthesis model runs from the previous activity and building off of the Shiny code provided in the GitHub repo:\n\n\nsummarize the model runs according to the feature that your group added (e.g., if you modified growth extract the length at age from each model).\nadd a new tab to the existing Shiny app that plots the data you summarized (e.g., plot length at age for all models)"
+  },
+  {
+    "objectID": "assets/day-2-pres-build-shiny.html#resources",
+    "href": "assets/day-2-pres-build-shiny.html#resources",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Resources",
+    "text": "Resources\n\n\nShiny widgets"
+  },
+  {
+    "objectID": "assets/day-1-modify-stock-synthesis.html",
+    "href": "assets/day-1-modify-stock-synthesis.html",
+    "title": "Modifying and running stock synthesis models",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "Day 1",
+      "Modifying Stock Synthesis files"
+    ]
+  },
+  {
+    "objectID": "assets/day-1-welcome.html#section",
+    "href": "assets/day-1-welcome.html#section",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "",
+    "text": "Welcome to ISC BILLWG Open Science Workshop\nJanuary 2025"
+  },
+  {
+    "objectID": "assets/day-1-welcome.html#introductions",
+    "href": "assets/day-1-welcome.html#introductions",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Introductions",
+    "text": "Introductions\n Nicholas  Ducharme-Barth\n Meg Oshima\n Michelle Sculley"
+  },
+  {
+    "objectID": "assets/day-1-welcome.html#workshop-materials",
+    "href": "assets/day-1-welcome.html#workshop-materials",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Workshop Materials",
+    "text": "Workshop Materials\n\nAll presentations can be found on the workshop website.\nCode can be found in the workshop repository.\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you have created a GitHub account before we start."
+  },
+  {
+    "objectID": "assets/day-1-welcome.html#why-open-science",
+    "href": "assets/day-1-welcome.html#why-open-science",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Why Open Science?",
+    "text": "Why Open Science?"
+  },
+  {
     "objectID": "assets/day-1-pres-modify-stock-synthesis.html#section",
     "href": "assets/day-1-pres-modify-stock-synthesis.html#section",
     "title": "Open Science Workflow Training for ISC",
@@ -473,32 +482,14 @@
     "text": "Group activity!\n\nUsing the toy Stock Synthesis model in the stock-synthesis-models/base-model directory make some modifications to the model, and run the different configurations.\n\n\n\nOptions  - Growth  - Selectivity  - Maturity  - Natural mortality  - Data-weighting\n\n\n\n\nEach group should set-up their own branch on the GitHub repo to house the code, model files, and model results for the feature that they explore."
   },
   {
-    "objectID": "assets/day-1-welcom.html#section",
-    "href": "assets/day-1-welcom.html#section",
-    "title": "Open Science Workflow Training for ISC",
+    "objectID": "assets/day-2.html",
+    "href": "assets/day-2.html",
+    "title": "Day 2",
     "section": "",
-    "text": "Welcome to ISC BILLWG Open Science Workshop\nJanuary 2025"
-  },
-  {
-    "objectID": "assets/day-1-welcom.html#introductions",
-    "href": "assets/day-1-welcom.html#introductions",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Introductions",
-    "text": "Introductions\n Nicholas  Ducharme-Barth\n Meg Oshima\n Michelle Sculley"
-  },
-  {
-    "objectID": "assets/day-1-welcom.html#workshop-materials",
-    "href": "assets/day-1-welcom.html#workshop-materials",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Workshop Materials",
-    "text": "Workshop Materials\n\nAll presentations can be found on the workshop website.\nCode can be found in the workshop repository.\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you have created a GitHub account before we start."
-  },
-  {
-    "objectID": "assets/day-1-welcom.html#why-open-science",
-    "href": "assets/day-1-welcom.html#why-open-science",
-    "title": "Open Science Workflow Training for ISC",
-    "section": "Why Open Science?",
-    "text": "Why Open Science?"
+    "text": "Presentation slides for building a Shiny app for our Stock Synthesis model runs.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
+    "crumbs": [
+      "Day 2"
+    ]
   },
   {
     "objectID": "shiny/introduction_index.html",
