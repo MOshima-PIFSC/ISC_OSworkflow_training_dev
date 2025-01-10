@@ -37,7 +37,7 @@ website:
         href: assets/day-2.html
         contents:
           - text: "Building a Shiny app"
-            file: assets/day-2-pres-build-shiny-app.qmd
+            file: assets/day-2-pres-build-shiny.qmd
       - section: "Contact us"
         contents:
         - text: "Nicholas Ducharme-Barth"
