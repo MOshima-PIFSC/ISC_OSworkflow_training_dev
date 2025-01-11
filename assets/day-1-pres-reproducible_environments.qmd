@@ -37,7 +37,7 @@ embed-resources: true
 ::: {.incremental}
 *   Code that used to run no longer runs even though you haven't changed the code itself  
 *   If you upgrade to a new version of a package or software and things break  
-*   You want to share your code with a colloaborate and ensure they get the same results you get  
+*   You want to share your code with a colloaborator and ensure they get the same results you get  
 *   You want to run your code in some other environment besides your local computer 
 :::  
 
