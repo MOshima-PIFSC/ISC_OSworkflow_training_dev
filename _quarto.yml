@@ -33,6 +33,8 @@ website:
             file: assets/day-1-reproducible_environments.qmd
           - text: "Modifying Stock Synthesis files"
             file: assets/day-1-pres-modify-stock-synthesis.qmd
+          - text: "Modifying Stock Synthesis files: Part 2"
+            file: assets/day-1-pres-modify-stock-synthesis_BILLWG.qmd
       - section: "Day 2"
         href: assets/day-2.html
         contents:
