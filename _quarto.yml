@@ -32,12 +32,14 @@ website:
           - text: "Reproducible environments"
             file: assets/day-1-reproducible_environments.qmd
           - text: "Modifying Stock Synthesis files"
-            file: assets/day-1-modify-stock-synthesis.qmd
+            file: assets/day-1-pres-modify-stock-synthesis.qmd
+          - text: "Modifying Stock Synthesis files: Part 2"
+            file: assets/day-1-pres-modify-stock-synthesis_BILLWG.qmd
       - section: "Day 2"
         href: assets/day-2.html
         contents:
           - text: "Building a Shiny app"
-            file: assets/day-2-pres-build-shiny-app.qmd
+            file: assets/day-2-pres-build-shiny.qmd
       - section: "Contact us"
         contents:
         - text: "Nicholas Ducharme-Barth"

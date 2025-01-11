@@ -16,6 +16,10 @@ Presentation slides for the presentation on modifying and running stock synthesi
 
 {{< revealjs file="day-1-pres-modify-stock-synthesis.html" height="500px" class="ratio ratio-16x9" >}}
 
+Presentation slides for the Part 2 presentation on modifying and running stock synthesis models.
+
+{{< revealjs file="day-1-pres-modify-stock-synthesis_BILLWG.html" height="500px" class="ratio ratio-16x9" >}}
+
 ## Resources
 
 Example code for modifying a [Stock Synthesis](https://nmfs-ost.github.io/ss3-website/) input model file and running the modified model through [R](https://www.r-project.org/) using the [r4ss](https://r4ss.github.io/r4ss/index.html) package can be found in the `r-code/` directory on the course [GitHub repo](https://github.com/MOshima-PIFSC/ISC_OSworkflow_training/tree/main/r-code).
