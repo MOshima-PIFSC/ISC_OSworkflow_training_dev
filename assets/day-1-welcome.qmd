@@ -38,7 +38,7 @@ embed-resources: true
 
 ## Workshop Materials  
 
-*   All presentations can be found on the [workshop website](https://github.com/MOshima-PIFSC/ISC_OSworkflow_training).   
+*   All presentations can be found on the [workshop website](https://moshima-pifsc.github.io/ISC_OSworkflow_training/).   
 
 *   Code can be found in the [workshop repository](https://github.com/MOshima-PIFSC/ISC_OSworkflow_training/r-code).   
 
