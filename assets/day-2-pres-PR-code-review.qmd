@@ -1,0 +1,70 @@
+---
+format: 
+ revealjs:
+  theme: [default, customizations/presentation-custom.scss]
+  footer: "ISC Open Science Workflows Workshop 2025"
+  logo: static/noaa-fisheries-logo.png
+  css: customizations/logo.css
+  slide-number: true
+  revealjs-plugins:
+  - codewindow
+  mermaid-format: svg
+embed-resources: true
+#bibliography: customizations/osg.bib
+---
+
+## {.center}
+::: {.titlebox style="text-align:center; font-size: 1.25em;"}
+
+[Pull Requests and Code Review]{.blue-title}
+
+
+[Megumi Oshima & Nicholas Ducharme-Barth]{.blue style="font-size:0.5em;"}  
+
+[January 2025]{.blue style="font-size:0.5em;"}
+:::
+
+# Let's review!  
+
+##  
+
+::: columns
+::: {.column width="45%"}
+
+
+[So far we have:]{.blue}
+
+::: {.fragment .fade-in fragment-index=1}
+::: {.fragment .semi-fade-out fragment-index=6}
+*   Created branches for each group to work separately  
+:::
+:::
+
+::: {.fragment .fade-in fragment-index=2}
+::: {.fragment .semi-fade-out fragment-index=6}
+*   Each group has modified the Stock Synthesis models  
+:::
+:::
+:::
+
+::: {.column width="45%"}
+
+::: {.fragment .fade-in fragment-index=3} 
+[Next we want to:]{.blue}  
+:::
+
+::: {.fragment .fade-in fragment-index=4}
+* Aggregate all of the model runs into the main branch
+:::
+
+::: {.fragment .fade-in fragment-index=5}
+::: {.fragment .semi-fade-out fragment-index=6}
+* Produce some visualizations of the results
+:::
+:::
+
+:::
+:::
+
+## Pull Requests  
+
