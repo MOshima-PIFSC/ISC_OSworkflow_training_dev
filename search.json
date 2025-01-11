@@ -56,77 +56,121 @@
     "href": "assets/day-1-pres-reproducible_environments.html#section",
     "title": "Open Science Workflow Training for ISC",
     "section": "",
-    "text": "Reproducible Environments\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
+    "text": "Reproducible Environments\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#what-is-a-reproducible-environment",
     "href": "assets/day-1-pres-reproducible_environments.html#what-is-a-reproducible-environment",
     "title": "Open Science Workflow Training for ISC",
     "section": "What is a reproducible environment?",
-    "text": "What is a reproducible environment?\n\n\nA computing setup where all the necessary components are explicitly defined\n\nOS, package versions, software, etc.\n\n\nAnyone can replicate that exact coding environment and the results will be the same across different machines"
+    "text": "What is a reproducible environment?\n\n\nA computing setup where all the necessary components are explicitly defined\n\nOS, package versions, software, etc.\n\n\nAnyone can replicate that exact coding environment and the results will be the same across different machines",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#signs-you-want-to-use-a-reproducible-environment",
     "href": "assets/day-1-pres-reproducible_environments.html#signs-you-want-to-use-a-reproducible-environment",
     "title": "Open Science Workflow Training for ISC",
     "section": "Signs you want to use a reproducible environment",
-    "text": "Signs you want to use a reproducible environment\n\n\nCode that used to run no longer runs even though you haven’t changed the code itself\n\nIf you upgrade to a new version of a package or software and things break\n\nYou want to share your code with a colloaborator and ensure they get the same results you get\n\nYou want to run your code in some other environment besides your local computer"
+    "text": "Signs you want to use a reproducible environment\n\n\nCode that used to run no longer runs even though you haven’t changed the code itself\n\nIf you upgrade to a new version of a package or software and things break\n\nYou want to share your code with a colloaborator and ensure they get the same results you get\n\nYou want to run your code in some other environment besides your local computer",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#how-can-we-do-this",
     "href": "assets/day-1-pres-reproducible_environments.html#how-can-we-do-this",
     "title": "Open Science Workflow Training for ISC",
     "section": "How can we do this?",
-    "text": "How can we do this?\nrenv is an R package to help create reproducible environments"
+    "text": "How can we do this?\nrenv is an R package to help create reproducible environments",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#renv",
     "href": "assets/day-1-pres-reproducible_environments.html#renv",
     "title": "Open Science Workflow Training for ISC",
     "section": "renv",
-    "text": "renv\n\n\nIsloated - each project has it’s own library\n\nPortable - easy to install on different computers (even OS)\n\nReproducible - ensures you are using the exact package versions"
+    "text": "renv\n\n\nIsloated - each project has it’s own library\n\nPortable - easy to install on different computers (even OS)\n\nReproducible - ensures you are using the exact package versions",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#renv-workflow",
     "href": "assets/day-1-pres-reproducible_environments.html#renv-workflow",
     "title": "Open Science Workflow Training for ISC",
     "section": "renv Workflow",
-    "text": "renv Workflow\n\n\n\n\n\n\n\n\n\n\n\nrenv::init()\n\n\n\n\n\n\n\nrenv::snapshot()\n\n\n\n\n\n\n\nrenv::restore()\n\n\n\n\n\n\n\nrenv::install()\n\n\n\n\n\n\n\nNew project\n\n\n\n\n\n\n\nProject library\n\n\n\n\n\n\n\nLockfile\n\n\n\n\n\n\n\nCRAN/GitHub"
+    "text": "renv Workflow\n\n\n\n\n\n\n\n\n\n\n\nrenv::init()\n\n\n\n\n\n\n\nrenv::snapshot()\n\n\n\n\n\n\n\nrenv::restore()\n\n\n\n\n\n\n\nrenv::install()\n\n\n\n\n\n\n\nNew project\n\n\n\n\n\n\n\nProject library\n\n\n\n\n\n\n\nLockfile\n\n\n\n\n\n\n\nCRAN/GitHub",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#initalize-project",
     "href": "assets/day-1-pres-reproducible_environments.html#initalize-project",
     "title": "Open Science Workflow Training for ISC",
     "section": "Initalize project",
-    "text": "Initalize project\n\n\n\nWhen you first start a project, you will want to initialize an renv project\n\n\n\n\n renv::init()\n\n\n\n\n\nCreates 3 items:\n\n\n\n\n renv/library/\n\n\n renv.lock\n\n\n .Rprofile\n\n\nrenv library is a library that is specific for that project and has the specific version of the packages that are being used in the project.\nlockfile holds the metadata for each package that specifies which version to install when run on a new computer.\nrprofile what tells the R session to use the renv files for the project library"
+    "text": "Initalize project\n\n\n\nWhen you first start a project, you will want to initialize an renv project\n\n\n\n\n renv::init()\n\n\n\n\n\nCreates 3 items:\n\n\n\n\n renv/library/\n\n\n renv.lock\n\n\n .Rprofile\n\n\nrenv library is a library that is specific for that project and has the specific version of the packages that are being used in the project.\nlockfile holds the metadata for each package that specifies which version to install when run on a new computer.\nrprofile what tells the R session to use the renv files for the project library",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#installing-new-packages",
     "href": "assets/day-1-pres-reproducible_environments.html#installing-new-packages",
     "title": "Open Science Workflow Training for ISC",
     "section": "Installing new packages",
-    "text": "Installing new packages\n\n\n renv::install() - can specify the location and version you want\n\n\n\n\n As you install new packages you will need to update the lockfile"
+    "text": "Installing new packages\n\n\n renv::install() - can specify the location and version you want\n\n\n\n\n As you install new packages you will need to update the lockfile",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#using-the-lockfile-for-collaboration",
     "href": "assets/day-1-pres-reproducible_environments.html#using-the-lockfile-for-collaboration",
     "title": "Open Science Workflow Training for ISC",
     "section": "Using the lockfile for collaboration",
-    "text": "Using the lockfile for collaboration\n\n\n renv::snapshot() - updates lockfile with metadata about all currently-used packages\n\n\n\n\n renv::restore() - reproduces the environment specified in the lockfile\n\n\n\nThe lockfile is what has all the information about the packages you’re using. It can be shared between people/computers and recreate the same environment you are using."
+    "text": "Using the lockfile for collaboration\n\n\n renv::snapshot() - updates lockfile with metadata about all currently-used packages\n\n\n\n\n renv::restore() - reproduces the environment specified in the lockfile\n\n\n\nThe lockfile is what has all the information about the packages you’re using. It can be shared between people/computers and recreate the same environment you are using.",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#another-use-for-renv",
     "href": "assets/day-1-pres-reproducible_environments.html#another-use-for-renv",
     "title": "Open Science Workflow Training for ISC",
     "section": "Another use for renv",
-    "text": "Another use for renv\n\n\nCan use a lockfile for GitHub Actions (or other continuous integration systems)\n\n\n\n\n\nUse the r-lib setup-renv action in your workflow\n\n\n\n\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n    - name: Install packages using renv\n      uses: r-lib/actions/setup-renv@v2"
+    "text": "Another use for renv\n\n\nCan use a lockfile for GitHub Actions (or other continuous integration systems)\n\n\n\n\n\nUse the r-lib setup-renv action in your workflow\n\n\n\n\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n    - name: Install packages using renv\n      uses: r-lib/actions/setup-renv@v2",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/day-1-pres-reproducible_environments.html#resources",
     "href": "assets/day-1-pres-reproducible_environments.html#resources",
     "title": "Open Science Workflow Training for ISC",
     "section": "Resources",
-    "text": "Resources\n\nIntroduction to renv\n\nUsing renv in GitHub Actions"
+    "text": "Resources\n\nIntroduction to renv\n\nUsing renv in GitHub Actions",
+    "crumbs": [
+      "Day 1",
+      "Reproducible environments"
+    ]
   },
   {
     "objectID": "assets/basic-html.html",
