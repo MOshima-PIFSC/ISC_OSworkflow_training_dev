@@ -28,8 +28,8 @@
     "text": "(insert a code chunk here)"
   },
   {
-    "objectID": "r-code/Group_info_template.html#three-things-we-want-to-learn-from-this-workshop",
-    "href": "r-code/Group_info_template.html#three-things-we-want-to-learn-from-this-workshop",
+    "objectID": "r-code/Group_info_template.html#things-we-want-to-learn-from-this-workshop",
+    "href": "r-code/Group_info_template.html#things-we-want-to-learn-from-this-workshop",
     "title": "Group",
     "section": "",
     "text": "(insert task list (with check boxes) of at least 3 things)"
@@ -46,7 +46,7 @@
     "href": "assets/day-2.html",
     "title": "Day 2",
     "section": "",
-    "text": "Presentation slides for building a Shiny app for our Stock Synthesis model runs.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
+    "text": "Presentation slides for pull requests and code review.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for building a Shiny app for our Stock Synthesis model runs.\n    View slides in full screen\n       \n      \n    \n  \n\n\n\n Back to top",
     "crumbs": [
       "Day 2"
     ]
@@ -364,77 +364,46 @@
     "text": "Back to top"
   },
   {
-    "objectID": "assets/day-1.html",
-    "href": "assets/day-1.html",
-    "title": "Day 1",
+    "objectID": "assets/day-3-pres-quarto.html#section",
+    "href": "assets/day-3-pres-quarto.html#section",
+    "title": "Open Science Workflow Training for ISC",
     "section": "",
-    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Reproducible Environments presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Part 2 presentation on modifying and running stock synthesis models.\n    View slides in full screen",
-    "crumbs": [
-      "Day 1"
-    ]
+    "text": "Quarto: Reports and presentations\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
   },
   {
-    "objectID": "assets/day-1.html#presentation-files",
-    "href": "assets/day-1.html#presentation-files",
-    "title": "Day 1",
-    "section": "",
-    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Reproducible Environments presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Part 2 presentation on modifying and running stock synthesis models.\n    View slides in full screen",
-    "crumbs": [
-      "Day 1"
-    ]
+    "objectID": "assets/day-3-pres-quarto.html#what-is-quarto",
+    "href": "assets/day-3-pres-quarto.html#what-is-quarto",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "What is Quarto?",
+    "text": "What is Quarto?\n\n\n\n“An open source technical publishing system for creating beautiful articles, websites, blogs, books, slides, and more.”\n\n— In their own words…\n\n\n\nBut really it is fancy LaTeX or expanded R Markdown that can do so much more!"
   },
   {
-    "objectID": "assets/day-1.html#resources",
-    "href": "assets/day-1.html#resources",
-    "title": "Day 1",
-    "section": "Resources",
-    "text": "Resources\nExample code for modifying a Stock Synthesis input model file and running the modified model through R using the r4ss package can be found in the r-code/ directory on the course GitHub repo.\nBriefly the r-code/01-modify-stock-synthesis.r file takes you through the steps of:\n\n\nreading in the Stock Synthesis input file (e.g., control.ss) using the r4ss package\nmodifying this file, in this case changing the steepness value \\(h\\) and thus modifying the shape of the stock-recruitment relationship (SRR)\nrunning the newly modified model\n\n\nThere is also code at the end of the file that wraps all three of those steps in a for loop in case multiple alternate model configurations want to be explored.",
-    "crumbs": [
-      "Day 1"
-    ]
+    "objectID": "assets/day-3-pres-quarto.html#output-to-multiple-formats",
+    "href": "assets/day-3-pres-quarto.html#output-to-multiple-formats",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Output to multiple formats!",
+    "text": "Output to multiple formats!\n\n\n\nbasic.qmd\n---\ntitle: \"Basic document\"\nformat: html\n---\n\n## Quarto\n\nMake different documents by changing the format! \n\n## Code\n\nIncorporate `code` into your work ...\n\n```{r}\n#| echo: true\nx = 1 + 1\n```\n... and report the computations later $x =$ `r x`.\n\n## Make plots\n\nEven insert figures:\n\n```{r}\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| echo: true\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n```"
   },
   {
-    "objectID": "assets/web-about-mo.html",
-    "href": "assets/web-about-mo.html",
-    "title": "Megumi Oshima",
-    "section": "",
-    "text": "Megumi Oshima has been working at the Pacific Islands Fisheries Science Center since 2021. She works mostly on domestic and territorial bottomfish stocks and is interested in Openscience and creating reproducible and transparent workflows. Before joining PIFSC, she was a graduate student at University of Southern Mississippi where she got her PhD in Coastal Sciences.\n\n\n Back to top",
-    "crumbs": [
-      "Contact us",
-      "Megumi Oshima"
-    ]
+    "objectID": "assets/day-3-pres-quarto.html#output-to-multiple-formats-1",
+    "href": "assets/day-3-pres-quarto.html#output-to-multiple-formats-1",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Output to multiple formats!",
+    "text": "Output to multiple formats!\n\n\n\nbasic.qmd\n---\ntitle: \"Basic document\"\nformat: pdf\n---\n\n## Quarto\n\nMake different documents by changing the format! \n\n## Code\n\nIncorporate `code` into your work ...\n\n```{r}\n#| echo: true\nx = 1 + 1\n```\n... and report the computations later $x =$ `r x`.\n\n## Make plots\n\nEven insert figures:\n\n```{r}\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| echo: true\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n```\n\n\n   \n    Unable to display PDF file. Download instead."
   },
   {
-    "objectID": "assets/basic-revealjs.html#quarto",
-    "href": "assets/basic-revealjs.html#quarto",
-    "title": "Basic document",
-    "section": "Quarto",
-    "text": "Quarto\nMake different documents by changing the format!"
+    "objectID": "assets/day-3-pres-quarto.html#output-to-multiple-formats-2",
+    "href": "assets/day-3-pres-quarto.html#output-to-multiple-formats-2",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Output to multiple formats!",
+    "text": "Output to multiple formats!\n\n\n\nbasic.qmd\n---\ntitle: \"Basic document\"\nformat: revealjs\n---\n\n## Quarto\n\nMake different documents by changing the format! \n\n## Code\n\nIncorporate `code` into your work ...\n\n```{r}\n#| echo: true\nx = 1 + 1\n```\n... and report the computations later $x =$ `r x`.\n\n## Make plots\n\nEven insert figures:\n\n```{r}\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| echo: true\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n```"
   },
   {
-    "objectID": "assets/basic-revealjs.html#code",
-    "href": "assets/basic-revealjs.html#code",
-    "title": "Basic document",
-    "section": "Code",
-    "text": "Code\nIncorporate code into your work …\n\nx = 1 + 1\n\n… and report the computations later \\(x =\\) 2."
-  },
-  {
-    "objectID": "assets/basic-revealjs.html#make-plots",
-    "href": "assets/basic-revealjs.html#make-plots",
-    "title": "Basic document",
-    "section": "Make plots",
-    "text": "Make plots\nEven insert figures:\n\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\n\n\n\n\nFigure 1: City and highway mileage for 38 popular models of cars."
-  },
-  {
-    "objectID": "assets/web-about-nd.html",
-    "href": "assets/web-about-nd.html",
-    "title": "Nicholas Ducharme-Barth",
-    "section": "",
-    "text": "Nicholas Ducharme-Barth joined the Pacific Islands Fisheries Science Center in 2021. Previously, Nicholas worked at the Pacific Community (SPC) conducting pelagic stock assessments for the Western and Central Pacific Fisheries Commission (WCPFC). He received his B.S. in Mathematics from the College of William & Mary and his Ph. D. in Fisheries and Aquatic Sciences from the University of Florida.\n\n\n Back to top",
-    "crumbs": [
-      "Contact us",
-      "Nicholas Ducharme-Barth"
-    ]
+    "objectID": "assets/day-3-pres-quarto.html#quarto-basics",
+    "href": "assets/day-3-pres-quarto.html#quarto-basics",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Quarto basics",
+    "text": "Quarto basics\n\n---\ntitle: \"Basic document\"\nformat: revealjs\n---"
   },
   {
     "objectID": "assets/day-2-pres-build-shiny.html#section",
@@ -602,46 +571,126 @@
     ]
   },
   {
-    "objectID": "assets/day-3-pres-quarto.html#section",
-    "href": "assets/day-3-pres-quarto.html#section",
+    "objectID": "assets/web-about-nd.html",
+    "href": "assets/web-about-nd.html",
+    "title": "Nicholas Ducharme-Barth",
+    "section": "",
+    "text": "Nicholas Ducharme-Barth joined the Pacific Islands Fisheries Science Center in 2021. Previously, Nicholas worked at the Pacific Community (SPC) conducting pelagic stock assessments for the Western and Central Pacific Fisheries Commission (WCPFC). He received his B.S. in Mathematics from the College of William & Mary and his Ph. D. in Fisheries and Aquatic Sciences from the University of Florida.\n\n\n Back to top",
+    "crumbs": [
+      "Contact us",
+      "Nicholas Ducharme-Barth"
+    ]
+  },
+  {
+    "objectID": "assets/basic-revealjs.html#quarto",
+    "href": "assets/basic-revealjs.html#quarto",
+    "title": "Basic document",
+    "section": "Quarto",
+    "text": "Quarto\nMake different documents by changing the format!"
+  },
+  {
+    "objectID": "assets/basic-revealjs.html#code",
+    "href": "assets/basic-revealjs.html#code",
+    "title": "Basic document",
+    "section": "Code",
+    "text": "Code\nIncorporate code into your work …\n\nx = 1 + 1\n\n… and report the computations later \\(x =\\) 2."
+  },
+  {
+    "objectID": "assets/basic-revealjs.html#make-plots",
+    "href": "assets/basic-revealjs.html#make-plots",
+    "title": "Basic document",
+    "section": "Make plots",
+    "text": "Make plots\nEven insert figures:\n\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\n\n\n\n\nFigure 1: City and highway mileage for 38 popular models of cars."
+  },
+  {
+    "objectID": "assets/web-about-mo.html",
+    "href": "assets/web-about-mo.html",
+    "title": "Megumi Oshima",
+    "section": "",
+    "text": "Megumi Oshima has been working at the Pacific Islands Fisheries Science Center since 2021. She works mostly on domestic and territorial bottomfish stocks and is interested in Openscience and creating reproducible and transparent workflows. Before joining PIFSC, she was a graduate student at University of Southern Mississippi where she got her PhD in Coastal Sciences.\n\n\n Back to top",
+    "crumbs": [
+      "Contact us",
+      "Megumi Oshima"
+    ]
+  },
+  {
+    "objectID": "assets/day-1.html",
+    "href": "assets/day-1.html",
+    "title": "Day 1",
+    "section": "",
+    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Reproducible Environments presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Part 2 presentation on modifying and running stock synthesis models.\n    View slides in full screen",
+    "crumbs": [
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "assets/day-1.html#presentation-files",
+    "href": "assets/day-1.html#presentation-files",
+    "title": "Day 1",
+    "section": "",
+    "text": "Presentation slides for the GitHub for Collaborative Workflows presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Codespaces presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Reproducible Environments presentation.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the presentation on modifying and running stock synthesis models.\n    View slides in full screen\n       \n      \n    \n  \nPresentation slides for the Part 2 presentation on modifying and running stock synthesis models.\n    View slides in full screen",
+    "crumbs": [
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "assets/day-1.html#resources",
+    "href": "assets/day-1.html#resources",
+    "title": "Day 1",
+    "section": "Resources",
+    "text": "Resources\nExample code for modifying a Stock Synthesis input model file and running the modified model through R using the r4ss package can be found in the r-code/ directory on the course GitHub repo.\nBriefly the r-code/01-modify-stock-synthesis.r file takes you through the steps of:\n\n\nreading in the Stock Synthesis input file (e.g., control.ss) using the r4ss package\nmodifying this file, in this case changing the steepness value \\(h\\) and thus modifying the shape of the stock-recruitment relationship (SRR)\nrunning the newly modified model\n\n\nThere is also code at the end of the file that wraps all three of those steps in a for loop in case multiple alternate model configurations want to be explored.",
+    "crumbs": [
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "assets/day-2-pres-PR-code-review.html#section",
+    "href": "assets/day-2-pres-PR-code-review.html#section",
     "title": "Open Science Workflow Training for ISC",
     "section": "",
-    "text": "Quarto: Reports and presentations\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
+    "text": "Pull Requests and Code Review\nMegumi Oshima & Nicholas Ducharme-Barth\nJanuary 2025"
   },
   {
-    "objectID": "assets/day-3-pres-quarto.html#what-is-quarto",
-    "href": "assets/day-3-pres-quarto.html#what-is-quarto",
+    "objectID": "assets/day-2-pres-PR-code-review.html#section-1",
+    "href": "assets/day-2-pres-PR-code-review.html#section-1",
     "title": "Open Science Workflow Training for ISC",
-    "section": "What is Quarto?",
-    "text": "What is Quarto?\n\n\n\n“An open source technical publishing system for creating beautiful articles, websites, blogs, books, slides, and more.”\n\n— In their own words…\n\n\n\nBut really it is fancy LaTeX or expanded R Markdown that can do so much more!"
+    "section": "",
+    "text": "So far we have:\n\n\n\nCreated branches for each group to work separately\n\n\n\n\n\n\n\nEach group has modified the Stock Synthesis models\n\n\n\n\n\n\nNext we want to:\n\n\n\nAggregate all of the model runs into the main branch\n\n\n\n\n\nProduce some visualizations of the results"
   },
   {
-    "objectID": "assets/day-3-pres-quarto.html#output-to-multiple-formats",
-    "href": "assets/day-3-pres-quarto.html#output-to-multiple-formats",
+    "objectID": "assets/day-2-pres-PR-code-review.html#pull-requests",
+    "href": "assets/day-2-pres-PR-code-review.html#pull-requests",
     "title": "Open Science Workflow Training for ISC",
-    "section": "Output to multiple formats!",
-    "text": "Output to multiple formats!\n\n\n\nbasic.qmd\n---\ntitle: \"Basic document\"\nformat: html\n---\n\n## Quarto\n\nMake different documents by changing the format! \n\n## Code\n\nIncorporate `code` into your work ...\n\n```{r}\n#| echo: true\nx = 1 + 1\n```\n... and report the computations later $x =$ `r x`.\n\n## Make plots\n\nEven insert figures:\n\n```{r}\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| echo: true\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n```"
+    "section": "Pull Requests",
+    "text": "Pull Requests\n\n\n\n\n\n\n\n\nmainbuild_modelgrowth_curveAdd initial filesDevelop base modelFinalize base modelChange growth curveCheck new growth curveFinal model report"
   },
   {
-    "objectID": "assets/day-3-pres-quarto.html#output-to-multiple-formats-1",
-    "href": "assets/day-3-pres-quarto.html#output-to-multiple-formats-1",
+    "objectID": "assets/day-2-pres-PR-code-review.html#pull-requests-1",
+    "href": "assets/day-2-pres-PR-code-review.html#pull-requests-1",
     "title": "Open Science Workflow Training for ISC",
-    "section": "Output to multiple formats!",
-    "text": "Output to multiple formats!\n\n\n\nbasic.qmd\n---\ntitle: \"Basic document\"\nformat: pdf\n---\n\n## Quarto\n\nMake different documents by changing the format! \n\n## Code\n\nIncorporate `code` into your work ...\n\n```{r}\n#| echo: true\nx = 1 + 1\n```\n... and report the computations later $x =$ `r x`.\n\n## Make plots\n\nEven insert figures:\n\n```{r}\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| echo: true\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n```\n\n\n   \n    Unable to display PDF file. Download instead."
+    "section": "Pull Requests",
+    "text": "Pull Requests\n\n\n\nIn the repository go to “Pull requests” and select which branches you want to merge"
   },
   {
-    "objectID": "assets/day-3-pres-quarto.html#output-to-multiple-formats-2",
-    "href": "assets/day-3-pres-quarto.html#output-to-multiple-formats-2",
+    "objectID": "assets/day-2-pres-PR-code-review.html#pull-requests-2",
+    "href": "assets/day-2-pres-PR-code-review.html#pull-requests-2",
     "title": "Open Science Workflow Training for ISC",
-    "section": "Output to multiple formats!",
-    "text": "Output to multiple formats!\n\n\n\nbasic.qmd\n---\ntitle: \"Basic document\"\nformat: revealjs\n---\n\n## Quarto\n\nMake different documents by changing the format! \n\n## Code\n\nIncorporate `code` into your work ...\n\n```{r}\n#| echo: true\nx = 1 + 1\n```\n... and report the computations later $x =$ `r x`.\n\n## Make plots\n\nEven insert figures:\n\n```{r}\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| echo: true\nlibrary(ggplot2)\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n```"
+    "section": "Pull Requests",
+    "text": "Pull Requests\n\n\n\n\n\n\n\n\n\n\n\nCan see the dif view of changes in the file, if the code passes checks and tests set up, what commits are associated with this PR, add comments to the PR\n\n\n\n\n\n\n\n\n\n\n\n\n\nRed lines show deleted code\nGreen lines show added code\n\n\n\n\n\n\n\n\n\n\nCan add a review of the changes"
   },
   {
-    "objectID": "assets/day-3-pres-quarto.html#quarto-basics",
-    "href": "assets/day-3-pres-quarto.html#quarto-basics",
+    "objectID": "assets/day-2-pres-PR-code-review.html#more-complicated-situation-merge-conflicts",
+    "href": "assets/day-2-pres-PR-code-review.html#more-complicated-situation-merge-conflicts",
     "title": "Open Science Workflow Training for ISC",
-    "section": "Quarto basics",
-    "text": "Quarto basics\n\n---\ntitle: \"Basic document\"\nformat: revealjs\n---"
+    "section": "More complicated situation: Merge Conflicts",
+    "text": "More complicated situation: Merge Conflicts\nMerge conflicts happen when you merge 2 branches that have competing commits"
+  },
+  {
+    "objectID": "assets/day-2-pres-PR-code-review.html#merge-conflicts",
+    "href": "assets/day-2-pres-PR-code-review.html#merge-conflicts",
+    "title": "Open Science Workflow Training for ISC",
+    "section": "Merge Conflicts",
+    "text": "Merge Conflicts\n\n\n2 ways to resolve them\n\n\n\n\n\nGitHub\n\n\n\n\n\n\nLocally"
   },
   {
     "objectID": "assets/day-1-pres-github_basics.html#section",
