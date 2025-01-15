@@ -1,6 +1,8 @@
 ---
 title: "Basic document"
-format: revealjs
+format:
+  html:
+    embed-resources: true
 ---
 
 ## Quarto

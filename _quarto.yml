@@ -6,8 +6,8 @@ project:
 website:
   title: "Open Science Workflow Training for ISC"
   reader-mode: true
-  site-url: "https://moshima-pifsc.github.io/ISC_OSworkflow_training_dev" 
-  repo-url: "https://github.com/MOshima-PIFSC/ISC_OSworkflow_training_dev"
+  site-url: "https://moshima-pifsc.github.io/ISC_OSworkflow_training" 
+  repo-url: "https://github.com/MOshima-PIFSC/ISC_OSworkflow_training"
   repo-actions: [source, issue]
   search: true
   back-to-top-navigation: true
@@ -18,7 +18,7 @@ website:
     search: true
     tools:
       - icon: github
-        href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training_dev
+        href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training
     contents: 
       - text: "Home"
         file: index.qmd
@@ -38,8 +38,15 @@ website:
       - section: "Day 2"
         href: assets/day-2.html
         contents:
+          - text: "Pull requests & code review"
+            file: assets/day-2-pres-PR-code-review.qmd
           - text: "Building a Shiny app"
             file: assets/day-2-pres-build-shiny.qmd
+      - section: "Day 3"
+        href: assets/day-3.html
+        contents:
+          - text: "Quarto: Reports and presentations"
+            file: assets/day-3-pres-quarto.qmd
       - section: "Group projects"
         contents:
         - text: "Report template"
@@ -55,7 +62,7 @@ website:
       - section: "Support"
         contents:
         - text: "Submit an issue"
-          href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training_dev/issues/new/choose
+          href: https://github.com/MOshima-PIFSC/ISC_OSworkflow_training/issues/new/choose
 
 format: 
   html:
