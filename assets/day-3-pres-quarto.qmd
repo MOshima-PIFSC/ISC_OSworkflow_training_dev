@@ -39,7 +39,18 @@ embed-resources: true
 But really it is fancy [LaTeX](https://www.latex-project.org/about/){preview-link="true"} or expanded [R Markdown](https://rmarkdown.rstudio.com/){preview-link="true"} that can do so much more!
 :::
 
-## Output to multiple formats!
+## What can it do?
+
+</br>
+
+::: {.incremental}
+- Incorporate executable `code blocks`,
+- write in math notation: $\hat{y} = \text{exp}(\mu - \frac{\sigma^2}{2})$,
+- insert figures,
+- and output to multiple formats!
+:::
+
+## Format: html
 
 ::: columns
 
@@ -90,14 +101,16 @@ ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
 ::: {.column width=50%}
 
 
-
+::: {.fragment .fade-in}
 {{< html file="basic-html.html" full-screen-link="false" >}}
+:::
+
 
 :::
 
 :::
 
-## Output to multiple formats!
+## Format: pdf
 
 ::: columns
 
@@ -156,7 +169,7 @@ ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
 :::
 
 
-## Output to multiple formats!
+## Format: revealjs
 
 ::: columns
 
@@ -214,10 +227,9 @@ ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
 
 :::
 
-## Quarto basics
+## Quarto basics: Header
 
 </br>
-
 
 
 ```{.md}
@@ -226,3 +238,134 @@ title: "Basic document"
 format: revealjs
 ---
 ```
+
+Use the header to set options for the document, including the `format`.
+
+
+## Quarto basics: Header {.smaller}
+
+
+The header can also be used to define re-usable parameters, and these can be used in the body of the report.
+
+
+::: columns
+
+::: {.column width=50%}
+
+::: {.codewindow .quarto}
+header-param.qmd
+`````{.md}
+---
+title: "Report template"
+author: Meg Oshima and Nicholas Ducharme-Barth
+format:
+  html:
+    embed-resources: true
+engine: knitr
+params:
+  parameter: "steepness"
+  value: 0.7
+---
+
+# Report text
+
+As an example we changed the `r params$parameter` in the model to `r params$value`.
+
+`````
+:::
+
+:::
+
+::: {.column width=50%}
+
+::: {.fragment .fade-in}
+
+{{< html file="header-example.html" full-screen-link="false" >}}
+
+:::
+
+:::
+
+:::
+
+
+## Format: revealjs
+- fragments
+- code highlighting
+- mermaid charts
+
+## `html` features
+
+::: {.fragment .fade-out fragment-index=1}
+
+::: {.codewindow .quarto .absolute top="15%" left="0%" right="0%" bottom="0%" style="font-size: 0.65em;"}
+
+`````{.md}
+---
+title: "Report template"
+author: Meg Oshima and Nicholas Ducharme-Barth
+format:
+  html:
+    embed-resources: true
+---
+
+# Code-folding
+
+We can visualize the `mpg` dataset for common cars...
+
+```{{r}}
+#| code-fold: true
+#| code-summary: "Show the code to plot the `mpg` dataset."
+#| echo: true
+#| eval: false
+
+library(ggplot2)
+
+ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  theme_minimal()
+
+```
+
+# Panel-tabset
+
+... and explore the relationship between highway fuel consumption and the number of cylinders.
+
+::: {.panel-tabset}
+
+## Plot
+
+```{{r}}
+#| echo: false
+library(ggplot2)
+
+ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  theme_minimal()
+```
+
+## Data subset
+
+```{{r}}
+#| echo: false
+head(mpg)
+```
+`````
+
+:::
+
+:::
+
+::: {.fragment .fade-in fragment-index=1}
+
+```{=html}
+<iframe width=100% height=500 top=15% bottom=0% src="report-example.html" style="top:20%; width:100%; bottom:5%; border: 1px solid #323C46; max-height: unset; max-width: unset; box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .5); border-radius: 5px;"></iframe>
+```
+
+:::
+
+## Report formatting
+
+## Resources
