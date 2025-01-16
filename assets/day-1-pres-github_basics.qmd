@@ -279,6 +279,7 @@ gitGraph
   branch growth_curve
   checkout growth_curve
   commit id: "Change growth curve"
+  commit id: "Test second growth curve"
   checkout build_model
   merge growth_curve
   commit id: "Check new growth curve"

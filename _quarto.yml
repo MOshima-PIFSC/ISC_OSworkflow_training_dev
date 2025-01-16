@@ -28,16 +28,22 @@ website:
           - text: "Github for Collaborative Workflows"
             file: assets/day-1-pres-github_basics.qmd
           - text: "Codespaces"
-            file: assets/day-1-codespaces.qmd
+            file: assets/day-1-pres-codespaces.qmd
           - text: "Reproducible environments"
-            file: assets/day-1-reproducible_environments.qmd
+            file: assets/day-1-pres-reproducible_environments.qmd
           - text: "Modifying Stock Synthesis files"
-            file: assets/day-1-modify-stock-synthesis.qmd
+            file: assets/day-1-pres-modify-stock-synthesis.qmd
+          - text: "Modifying Stock Synthesis files: Part 2"
+            file: assets/day-1-pres-modify-stock-synthesis_BILLWG.qmd
       - section: "Day 2"
         href: assets/day-2.html
         contents:
           - text: "Building a Shiny app"
-            file: assets/day-2-build-shiny-app.qmd
+            file: assets/day-2-pres-build-shiny.qmd
+      - section: "Group projects"
+        contents:
+        - text: "Report template"
+          file: assets/day-3-report-template.qmd
       - section: "Contact us"
         contents:
         - text: "Nicholas Ducharme-Barth"
