@@ -1,0 +1,24 @@
+---
+format: 
+ revealjs:
+  theme: [default, customizations/presentation-custom.scss]
+  footer: "ISC Open Science Worflows Workshop 2025"
+  logo: static/noaa-fisheries-logo.png
+  css: customizations/logo.css
+  slide-number: true
+  revealjs-plugins:
+  - codewindow
+  mermaid-format: svg
+embed-resources: true
+---
+
+## {.center}
+::: {.titlebox style="text-align:center; font-size: 1.25em;"}
+
+[Quarto: Creating websites]{.blue-title}
+
+
+[Megumi Oshima & Nicholas Ducharme-Barth]{.blue style="font-size:0.5em;"}  
+
+[January 2025]{.blue style="font-size:0.5em;"}
+:::
