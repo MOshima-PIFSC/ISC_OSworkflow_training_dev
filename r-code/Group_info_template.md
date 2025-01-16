@@ -15,3 +15,5 @@
 ## Things we want to learn from this workshop  
 
 (insert task list (with check boxes) of at least 3 things)
+
+[] Learn cool stuff!!  
